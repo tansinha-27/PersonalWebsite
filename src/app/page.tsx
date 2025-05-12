@@ -1,103 +1,493 @@
-import Image from "next/image";
+"use client";
+import { useState , useEffect , useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+
+import {
+  FaTableTennis,
+  FaPlane,
+  FaBook,
+  FaMusic,
+  FaCode,
+  FaBrain,
+  FaComments,
+  FaCheckCircle,
+  FaHeartbeat,
+  FaRegLightbulb,
+  FaBookReader, 
+  FaEnvelope,
+  FaBullhorn,
+  FaLinkedin,
+  FaArrowRight,
+  FaGithub,
+  FaLightbulb,
+} from "react-icons/fa";
+import PersonalProgressTimeline from "../components/PersonalProgressTimeline";
+import ExpandableCards from "../components/ExpandableCards";
+// import ResumeButton from "../components/ResumeButton";
+import { EB_Garamond } from 'next/font/google';
+import { Typewriter } from "react-simple-typewriter";
+import { Frank_Ruhl_Libre } from 'next/font/google';
+import { Raleway } from 'next/font/google';
+import { Inter } from 'next/font/google';
+import { Bebas_Neue } from 'next/font/google';
+
+const garamond = EB_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'], // choose weights you want
+  variable: '--font-garamond',
+  display: 'swap',
+});
+
+const frankRuhlLibre = Frank_Ruhl_Libre({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  variable: '--font-frank',
+});
+
+const raleway = Raleway({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-raleway',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter',
+});
+
+const bebasNeue = Bebas_Neue({
+  weight: ['400'],
+  subsets: ['latin'],
+});
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [activePanel, setActivePanel] = useState<"first" | "last" | null>(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [hoveredPanel, setHoveredPanel] = useState<"first" | "last" | null>(null);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+
+
+  const handleClick = (panel: "first" | "last") => {
+    setActivePanel(panel);
+  };
+
+  useEffect(() => {
+    setIsTouchDevice("ontouchstart" in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  const getVideoSource = (): string | undefined =>  {
+    if (hoveredPanel === "first") return "/videos/myvideo.mp4";
+    if (hoveredPanel === "last") return "/videos/myvideo2.mp4";
+    return undefined;
+  };
+
+  
+
+  return (
+    
+    <div className="min-h-screen w-screen relative overflow-hidden text-center bg-white scroll-smooth">
+      {/* <main>
+      <Hero />
+    </main> */}
+       <div className="absolute top-4 right-4 z-20">
+         {/* <a
+          href="/resume.pdf"
+          download
+          className="relative overflow-hidden px-6 py-2 rounded-full border-2 border-cyan-600 text-black bg-white 
+           font-medium text-sm sm:text-base shadow transition duration-300 ease-in-out
+           before:absolute before:inset-0 before:bg-cyan-600 before:scale-x-0 before:origin-left 
+           before:transition-transform before:duration-300 before:ease-in-out
+           hover:before:scale-x-100 hover:text-white"
+
+        >
+          Download Resume
+        </a>  */}
+         {/* <ResumeButton /> */}
+
+{/* <a
+  href="/resume.pdf"
+  download
+  className="group relative inline-flex items-center overflow-hidden px-6 py-2 rounded-full border-2 border-cyan-600 text-black bg-white 
+    font-medium text-sm sm:text-base shadow transition duration-300 ease-in-out"
+>
+  <span
+    className="absolute inset-0 bg-cyan-600 scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-300 ease-in-out pointer-events-none z-0"
+    aria-hidden="true"
+  ></span>
+
+  <span className="relative z-10 flex items-center space-x-2 transition-colors duration-300 ease-in-out group-hover:text-white">
+    <span>Download Resume</span>
+    <FaArrowRight className="text-black group-hover:text-white transition-colors duration-300 ease-in-out" />
+  </span>
+</a> */}
+      
+        
+      </div> 
+      {/* <video
+        className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 z-10 ${isHovered ? 'opacity-40' : 'opacity-0'}`}
+        src="/videos/myvideo.mp4" // Replace with your video path
+        autoPlay
+        loop
+        muted
+        playsInline
+      /> */}
+
+{/* {activePanel && isHovered && getVideoSource() && (
+        <video
+          key={getVideoSource()} // forces re-render when source changes
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 z-10 pointer-events-none ${isHovered ? 'opacity-40' : 'opacity-0'}`}
+          src={getVideoSource()!}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      )} */}
+
+{hoveredPanel && (
+  <video
+    key={hoveredPanel} // ensures re-render on panel switch
+    className="absolute top-0 left-0 w-full h-full object-cover opacity-40 transition-opacity duration-500 z-10 pointer-events-none"
+    src={getVideoSource()!}
+    autoPlay
+    loop
+    muted
+    playsInline
+  />
+)}
+
+
+
+
+
+      <div className="relative z-20 flex flex-col items-center justify-center min-h-screen px-4 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold space-y-4 transform -translate-x-2 sm:-translate-x-4 md:-translate-x-6">
+      <motion.div
+        //  onMouseEnter={() => {
+        //   if (!isTouchDevice) {
+        //     setIsHovered(true);
+        //     setHoveredPanel("first");
+        //   }
+        // }}
+        // onMouseLeave={() => {
+        //   if (!isTouchDevice) {
+        //     setIsHovered(false);
+        //     setHoveredPanel(null);
+        //   }
+        // }}
+        onMouseEnter={() => setHoveredPanel("first")}
+        onMouseLeave={() => setHoveredPanel(null)}
+        onClick={() => handleClick("first")}
+          whileHover={{ x: -30 }} // shift left on hover (desktop)
+  // animate={isHovered && isTouchDevice ? { x: -30 } : { x: 0 }} // shift left on tap (mobile)
+  // transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+          className="cursor-pointer text-cyan-700 hover:text-cyan-500 transition font-[Orpheus_Pro] -translate-x-2 sm:-translate-x-12 tracking-wide group"
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => e.key === "Enter" && handleClick("first")}
+        >
+          Tanishaa
+          <sup className="text-xs sm:text-base align-top text-gray-500 transition-all duration-200 group-hover:text-sm group-hover:sm:text-lg">
+            [personal] </sup>
+          </motion.div>
+
+        <motion.div
+          // onMouseEnter={() => {
+          //   if (!isTouchDevice) {
+          //     setIsHovered(true);
+          //     setHoveredPanel("last");
+          //   }
+          // }}
+          // onMouseLeave={() => {
+          //   if (!isTouchDevice) {
+          //     setIsHovered(false);
+          //     setHoveredPanel(null);
+          //   }
+          // }}
+          onMouseEnter={() => setHoveredPanel("last")}
+          onMouseLeave={() => setHoveredPanel(null)}
+          onClick={() => handleClick("last")}
+          whileHover={{ x: 30 }} // shift left on hover (desktop)
+          className="cursor-pointer text-gray-900 hover:text-gray-700 transition font-[Twentieth_Century] translate-x-12 sm:translate-x-23 group"
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1.4, duration: 0.8 }}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => e.key === "Enter" && handleClick("last")}
+        >
+          Sinha
+          <sup className="text-xs sm:text-base align-top text-gray-500 transition-all duration-200 group-hover:text-sm group-hover:sm:text-lg">[professional]</sup>
+
+        </motion.div>
+
+                  
+          {/* <motion.div
+            className="text-cyan-600 text-2xl mt-5"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.8, duration: 1 }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            <span>
+              <Typewriter
+                words={["Work In Progress – Click to know more"]}
+                loop={0}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1500}
+              />
+            </span>
+            </motion.div> */}
+
+        <div className="flex space-x-6 mt-10 text-2xl sm:text-3xl text-gray-600">
+          <a href="mailto:sinhatan2002@gmail.com" target="_blank" rel="noopener noreferrer">
+            <FaEnvelope />
           </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+          <a href="https://www.linkedin.com/in/tansinha/" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin />
           </a>
+          {/* <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">
+            <FaGithub />
+          </a> */}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        
+      </div>  
+
+    
+      <AnimatePresence>
+        {(activePanel === "first" || activePanel === "last") && (
+          <motion.div
+            key={activePanel}
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "100%" }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="fixed top-0 left-0 right-0 bottom-0 bg-gray-950 text-white z-30 p-6 sm:p-10 overflow-y-auto scroll-smooth"
+          >
+            <div className="absolute top-4 right-4">
+              <button
+                onClick={() => setActivePanel(null)}
+                className="text-white text-base px-5 py-1.5 rounded-full
+                  bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900
+                  border border-gray-700/50
+                  shadow-[2px_2px_6px_0_rgba(0,0,0,0.2),-2px_-2px_6px_0_rgba(255,255,255,0.05)]
+                  hover:shadow-[inset_2px_2px_6px_0_rgba(0,0,0,0.2),inset_-2px_-2px_6px_0_rgba(255,255,255,0.05)]
+                  transition-all duration-200 ease-in-out
+                  hover:scale-[0.98]
+                  hover:border-gray-600/50
+                  focus:outline-none
+                  active:scale-95"
+              >
+                Close
+              </button>
+            </div>
+            
+
+{activePanel === "first" && (
+  <div>
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    className={`${raleway.className} flex flex-col md:flex-row gap-8 md:gap-12 mt-12 px-4 sm:px-6 md:px-12`}
+  >
+    {/* Left Section */}
+    <div className="w-full md:w-1/2 text-left">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+        Hi.
+      </h1>
+
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl  mb-4">
+        This is me behind my resume.
+      </h1>
+      <br></br>
+      <p className="mb-4 text-base sm:text-lg md:text-xl text-gray-300 text-justify">
+        I love to work in spaces where you can <span className="text-cyan-400">identify </span>user problems , <span className="text-cyan-400">create </span> feasible solutions and <span className="text-cyan-400">reiterate </span> till it reaches an optimal point.
+      </p>
+      <p className="text-lg sm:text-lg md:text-xl text-gray-300 text-justify">
+        My interests lie at the confluence of <span className="text-cyan-400">product , tech </span> and <span className="text-cyan-400">social welfare</span>
+      </p>
+      <br></br>
+      <p className="text-lg sm:text-lg md:text-xl text-gray-300 text-justify">
+        Born in Mumbai, brought up in Delhi and currently living in Bangalore, I have been Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+      </p>
+      <br></br>
+      <p className="text-lg sm:text-lg md:text-xl text-gray-300 text-justify">
+        Interesting narrative
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+    {/*  */}
+      
+      {/* <Cards /> */}
+      <div className="min-h-screen">
+        <ExpandableCards />
+      </div>
+       
+      </div>
+
+
+    {/* Right Section */}
+    <div className="w-full md:w-1/2">
+      <div className="mb-12">
+        {typeof PersonalProgressTimeline !== 'undefined' ? (
+          <PersonalProgressTimeline />
+        ) : (
+          <div>Loading timeline...</div>
+        )}
+      </div>
+
+
+    </div>
+    
+  </motion.div>
+
+  {/* Footer section for icons */}
+    <div className="mt-16 px-4 sm:px-6 md:px-12 text-center">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-raleway font-light text-white mb-14">
+        What we can connect over
+      </h2>
+      <div className="mt-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-y-8 justify-items-center">
+          <div className="flex flex-col items-center text-white text-5xl">
+          <FaCode className="mb-2"></FaCode>
+          <span className="text-base">Coding</span>
+
+        </div>
+        <div className="flex flex-col items-center text-white text-5xl">
+          <FaBullhorn className="mb-2"></FaBullhorn>
+          <span className="text-base">Coding</span>
+
+        </div>
+        <div className="flex flex-col items-center text-white text-5xl">
+          <FaHeartbeat className="mb-2"></FaHeartbeat>
+          <span className="text-base">Coding</span>
+
+        </div>
+        <div className="flex flex-col items-center text-white text-5xl">
+          <FaLightbulb className="mb-2"></FaLightbulb>
+          <span className="text-base">Coding</span>
+
+        </div>
+        <div className="flex flex-col items-center text-white text-5xl">
+          <FaBookReader className="mb-2"></FaBookReader>
+          <span className="text-base">Coding</span>
+
+        </div>
+        <div className="flex flex-col items-center text-white text-5xl">
+          <FaMusic className="mb-2"></FaMusic>
+          <span className="text-base">Coding</span>
+
+        </div>
+        <div className="flex flex-col items-center text-white text-5xl">
+          <FaTableTennis className="mb-2"></FaTableTennis>
+          <span className="text-base">Coding</span>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  
+)}
+
+
+
+
+
+            {activePanel === "last" && (
+              <div>
+                <h2 className="text-3xl font-bold mb-6">Tanishaa OS</h2>
+                <p className="text-lg mb-8 text-gray-300 max-w-3xl mx-auto">A living, evolving product – continuously improving through feedback, experiments, and real-world testing.</p>
+
+                <div className="mt-10">
+                  <h3 className="text-2xl font-semibold mb-4">KPI Dashboard</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="bg-gray-800 p-4 rounded-lg shadow text-center">
+                      <p className="text-3xl font-bold">20</p>
+                      <p className="text-sm text-gray-400">Blogs Written</p>
+                    </div>
+                    <div className="bg-gray-800 p-4 rounded-lg shadow text-center">
+                      <p className="text-3xl font-bold">15</p>
+                      <p className="text-sm text-gray-400">Projects Delivered</p>
+                    </div>
+                    <div className="bg-gray-800 p-4 rounded-lg shadow text-center">
+                      <p className="text-3xl font-bold">8</p>
+                      <p className="text-sm text-gray-400">Tech Talks</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-10">
+                  <h3 className="text-2xl font-semibold mb-4">Product Specs</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">React.js</div>
+                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">TypeScript</div>
+                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">UI/UX Design</div>
+                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">Test Automation</div>
+                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">AI Integrations</div>
+                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">Performance Optimization</div>
+                  </div>
+                </div>
+
+                <div className="mt-10">
+                  <h3 className="text-2xl font-semibold mb-4">Feature Comparison</h3>
+                  <table className="table-auto w-full text-left border border-gray-700">
+                    <thead>
+                      <tr className="bg-gray-800">
+                        <th className="px-4 py-2">Feature</th>
+                        <th className="px-4 py-2">Gawande OS</th>
+                        <th className="px-4 py-2">Others</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-t border-gray-700">
+                        <td className="px-4 py-2">Rapid Prototyping</td>
+                        <td className="px-4 py-2">✅</td>
+                        <td className="px-4 py-2">❌</td>
+                      </tr>
+                      <tr className="border-t border-gray-700">
+                        <td className="px-4 py-2">Minimal UI</td>
+                        <td className="px-4 py-2">✅</td>
+                        <td className="px-4 py-2">⚠️</td>
+                      </tr>
+                      <tr className="border-t border-gray-700">
+                        <td className="px-4 py-2">AI-first Thinking</td>
+                        <td className="px-4 py-2">✅</td>
+                        <td className="px-4 py-2">❌</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="mt-10">
+                  <h3 className="text-2xl font-semibold mb-4">Bug Fixes & Improvements</h3>
+                  <ul className="space-y-4">
+                    <li className="bg-gray-800 p-4 rounded-lg shadow">
+                      <strong>[Fix]</strong> Resolved dark mode layout glitch on mobile view.
+                    </li>
+                    <li className="bg-gray-800 p-4 rounded-lg shadow">
+                      <strong>[Improvement]</strong> Enhanced animation performance for older devices.
+                    </li>
+                    <li className="bg-gray-800 p-4 rounded-lg shadow">
+                      <strong>[Fix]</strong> Smooth scroll issue fixed in story panel.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
