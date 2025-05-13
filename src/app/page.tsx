@@ -21,6 +21,7 @@ import {
   FaArrowRight,
   FaGithub,
   FaLightbulb,
+  FaBroom,
 } from "react-icons/fa";
 import PersonalProgressTimeline from "../components/PersonalProgressTimeline";
 import ExpandableCards from "../components/ExpandableCards";
@@ -61,6 +62,19 @@ const bebasNeue = Bebas_Neue({
   weight: ['400'],
   subsets: ['latin'],
 });
+
+const iconVariant = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.5,
+      ease: 'easeOut',
+    },
+  }),
+};
 
 export default function Home() {
   const [activePanel, setActivePanel] = useState<"first" | "last" | null>(null);
@@ -297,7 +311,7 @@ export default function Home() {
     initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
-    className={`${raleway.className} flex flex-col md:flex-row gap-8 md:gap-12 mt-12 px-4 sm:px-6 md:px-12`}
+    className={`${raleway.className} flex flex-col md:flex-row gap-6 md:gap-10 mt-12 px-4 sm:px-6 md:px-12`}
   >
     {/* Left Section */}
     <div className="w-full md:w-1/2 text-left">
@@ -317,13 +331,20 @@ export default function Home() {
       </p>
       <br></br>
       <p className="text-lg sm:text-lg md:text-xl text-gray-300 text-justify">
-        Born in Mumbai, brought up in Delhi and currently living in Bangalore, I have been Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Born in Mumbai, brought up in Delhi and currently living in Bangalore, I have experienced being a part of the cosmopolitan city life always - with each of the three cities blending in their own local influence. Mumbai showed me humility , Delhi taught me to be thick skinned and Bangalore introduced me to an amazing arena of cool, like minded people.
 
       </p>
       <br></br>
       <p className="text-lg sm:text-lg md:text-xl text-gray-300 text-justify">
-        Interesting narrative
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        An extremely shy , novel-engrossed kid growing up, I started to realise my strengths in high school and college; I was great at cracking council/scholarship interviews , I was a looked up leader at my college technical club , and I had a way of asking questions, analysing problems and people which helped me understand scenarios better.
+        </p>
+      <br></br>
+      <p className="text-lg sm:text-lg md:text-xl text-gray-300 text-justify">
+       I always wanted to explore the world of software since it blew my mind at how it made things like e-commerce , social media as well as financial services were available at just a tap. I wanted to understand how applications worked behind the scenes. Thus, I enrolled in a Computer Science degree, graduated four amazing years later and got my first corporate gig as a software engineer at a large american MNC.
+    </p>
+    <br></br>
+      <p className="text-lg sm:text-lg md:text-xl text-gray-300 text-justify">
+       So here I stand now - ready to explore , fail and learn henceforth
     </p>
 
     {/*  */}
@@ -351,49 +372,81 @@ export default function Home() {
     
   </motion.div>
 
-  {/* Footer section for icons */}
-    <div className="mt-16 px-4 sm:px-6 md:px-12 text-center">
+    <div className="mt-12 px-4 sm:px-6 md:px-12 text-center">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-raleway font-light text-white mb-14">
         What we can connect over
       </h2>
-      <div className="mt-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-y-8 justify-items-center">
-          <div className="flex flex-col items-center text-white text-5xl">
+
+      <div className="mt-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-y-8 justify-items-center">
+  {[
+    { icon: <FaCode />, label: 'Tech & Software' },
+    { icon: <FaBullhorn />, label: 'Podcasts' },
+    { icon: <FaHeartbeat />, label: 'Social welfare' },
+    { icon: <FaLightbulb />, label: 'Product Ideas' },
+    { icon: <FaBookReader />, label: 'Book Recs' },
+    { icon: <FaMusic />, label: 'Singing' },
+    { icon: <FaTableTennis />, label: 'TT' },
+    { icon: <FaBroom />, label: 'Harry Potter' },
+  ].map(({ icon, label }, i) => (
+    <motion.div
+      key={label}
+      className="flex flex-col items-center text-white text-5xl"
+      variants={iconVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      custom={i}
+    >
+      <div className="mb-2">{icon}</div>
+      <span className="text-base">{label}</span>
+    </motion.div>
+  ))}
+</div>
+      {/* <div className="mt-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-y-8 justify-items-center"> */}
+          {/* <div className="flex flex-col items-center text-white text-5xl">
           <FaCode className="mb-2"></FaCode>
-          <span className="text-base">Coding</span>
+          <span className="text-base">Tech & Software</span>
 
         </div>
         <div className="flex flex-col items-center text-white text-5xl">
           <FaBullhorn className="mb-2"></FaBullhorn>
-          <span className="text-base">Coding</span>
+          <span className="text-base">Podcasts</span>
 
         </div>
         <div className="flex flex-col items-center text-white text-5xl">
           <FaHeartbeat className="mb-2"></FaHeartbeat>
-          <span className="text-base">Coding</span>
+          <span className="text-base">Social welfare</span>
 
         </div>
         <div className="flex flex-col items-center text-white text-5xl">
           <FaLightbulb className="mb-2"></FaLightbulb>
-          <span className="text-base">Coding</span>
+          <span className="text-base">Product Ideas</span>
 
         </div>
         <div className="flex flex-col items-center text-white text-5xl">
           <FaBookReader className="mb-2"></FaBookReader>
-          <span className="text-base">Coding</span>
+          <span className="text-base">Book Recs</span>
 
         </div>
         <div className="flex flex-col items-center text-white text-5xl">
           <FaMusic className="mb-2"></FaMusic>
-          <span className="text-base">Coding</span>
+          <span className="text-base">Singing</span>
 
         </div>
         <div className="flex flex-col items-center text-white text-5xl">
           <FaTableTennis className="mb-2"></FaTableTennis>
-          <span className="text-base">Coding</span>
+          <span className="text-base">TT</span>
 
         </div>
-      </div>
+        <div className="flex flex-col items-center text-white text-5xl">
+          <FaBroom className="mb-2"></FaBroom>
+          <span className="text-base">Harry Potter</span>
+
+        </div>
+      </div> */}
     </div>
+
+
 
   </div>
 
@@ -405,63 +458,86 @@ export default function Home() {
 
 
             {activePanel === "last" && (
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Tanishaa OS</h2>
+              <div className={`${raleway.className}`}>
+              <h1 className="text-6xl font-semibold mb-6">Tanishaa <span className="text-cyan-400 font-semibold">OS</span></h1>
                 <p className="text-lg mb-8 text-gray-300 max-w-3xl mx-auto">A living, evolving product – continuously improving through feedback, experiments, and real-world testing.</p>
 
                 <div className="mt-10">
-                  <h3 className="text-2xl font-semibold mb-4">KPI Dashboard</h3>
+                  <h3 className="text-2xl font-semibold mb-4">KPI <span className="text-cyan-400">Dashboard</span></h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div className="bg-gray-800 p-4 rounded-lg shadow text-center">
-                      <p className="text-3xl font-bold">20</p>
-                      <p className="text-sm text-gray-400">Blogs Written</p>
+                      <p className="text-3xl font-bold">50</p>
+                      <p className="text-sm text-gray-400">Blogs Written (Tech/Non-Tech)</p>
                     </div>
                     <div className="bg-gray-800 p-4 rounded-lg shadow text-center">
-                      <p className="text-3xl font-bold">15</p>
+                      <p className="text-3xl font-bold">5</p>
                       <p className="text-sm text-gray-400">Projects Delivered</p>
                     </div>
                     <div className="bg-gray-800 p-4 rounded-lg shadow text-center">
-                      <p className="text-3xl font-bold">8</p>
-                      <p className="text-sm text-gray-400">Tech Talks</p>
+                      <p className="text-3xl font-bold">4</p>
+                      <p className="text-sm text-gray-400">Honors/Awards</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-10">
-                  <h3 className="text-2xl font-semibold mb-4">Product Specs</h3>
+                  <h3 className="text-2xl font-semibold mb-4">Product <span className="text-cyan-400">Specs</span></h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">React.js</div>
-                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">TypeScript</div>
-                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">UI/UX Design</div>
+                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">CI/CD </div>
+                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">Data Analysis</div>
                     <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">Test Automation</div>
-                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">AI Integrations</div>
-                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">Performance Optimization</div>
+                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">Next.js</div>
+
+                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">.NET</div>
+                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">GitLab</div>
+                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">PlayWright</div>
+                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">C++ / Python/ Java</div>
+
+
+                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">SQL</div>
+                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">Team Leadership</div>
+                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">Product Thinking</div>
+                    <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">Coomunication and Management</div>
+
+
+
+
                   </div>
                 </div>
 
                 <div className="mt-10">
-                  <h3 className="text-2xl font-semibold mb-4">Feature Comparison</h3>
+                  <h3 className="text-2xl font-semibold mb-4">Feature <span className="text-cyan-400"> Comparison</span></h3>
                   <table className="table-auto w-full text-left border border-gray-700">
                     <thead>
                       <tr className="bg-gray-800">
                         <th className="px-4 py-2">Feature</th>
-                        <th className="px-4 py-2">Gawande OS</th>
+                        <th className="px-4 py-2">Tanishaa OS</th>
                         <th className="px-4 py-2">Others</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr className="border-t border-gray-700">
-                        <td className="px-4 py-2">Rapid Prototyping</td>
+                        <td className="px-4 py-2">Authenticity with depth</td>
                         <td className="px-4 py-2">✅</td>
                         <td className="px-4 py-2">❌</td>
                       </tr>
                       <tr className="border-t border-gray-700">
-                        <td className="px-4 py-2">Minimal UI</td>
+                        <td className="px-4 py-2">Hybrid thinker</td>
                         <td className="px-4 py-2">✅</td>
                         <td className="px-4 py-2">⚠️</td>
                       </tr>
                       <tr className="border-t border-gray-700">
-                        <td className="px-4 py-2">AI-first Thinking</td>
+                        <td className="px-4 py-2">Growth focused mindset</td>
+                        <td className="px-4 py-2">✅</td>
+                        <td className="px-4 py-2">❌</td>
+                      </tr>
+                      <tr className="border-t border-gray-700">
+                        <td className="px-4 py-2">Top notch communication</td>
+                        <td className="px-4 py-2">✅</td>
+                        <td className="px-4 py-2">❌</td>
+                      </tr>
+                      <tr className="border-t border-gray-700">
+                        <td className="px-4 py-2">Empathy based leadership</td>
                         <td className="px-4 py-2">✅</td>
                         <td className="px-4 py-2">❌</td>
                       </tr>
@@ -470,16 +546,19 @@ export default function Home() {
                 </div>
 
                 <div className="mt-10">
-                  <h3 className="text-2xl font-semibold mb-4">Bug Fixes & Improvements</h3>
+                  <h3 className="text-2xl font-semibold mb-4">Bug Fixes & <span className="text-cyan-400">Improvements</span></h3>
                   <ul className="space-y-4">
                     <li className="bg-gray-800 p-4 rounded-lg shadow">
-                      <strong>[Fix]</strong> Resolved dark mode layout glitch on mobile view.
+                      <strong>[Fix]</strong> Tendency to overextend into multiple goals at once — now working with clearer monthly focus
                     </li>
                     <li className="bg-gray-800 p-4 rounded-lg shadow">
-                      <strong>[Improvement]</strong> Enhanced animation performance for older devices.
+                      <strong>[Improvement]</strong> Shifting slowly from lack of execution to strength of action
                     </li>
                     <li className="bg-gray-800 p-4 rounded-lg shadow">
-                      <strong>[Fix]</strong> Smooth scroll issue fixed in story panel.
+                      <strong>[Improvement]</strong> implementing more analytical thinking approach rather than following intuition
+                    </li>
+                    <li className="bg-gray-800 p-4 rounded-lg shadow">
+                      <strong>[Fix]</strong> Hesitation in personal branding — taking my first step through this portfolio website
                     </li>
                   </ul>
                 </div>

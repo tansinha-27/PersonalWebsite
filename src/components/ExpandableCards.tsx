@@ -113,19 +113,20 @@ const Card: React.FC = () => {
       {/* Top section */}
       <div
         onClick={handleTopClick}
-        className={`absolute top-0 left-0 w-full bg-cyan-600 text-white px-6 py-6 cursor-pointer transition-all duration-500 ease-in-out
+        className={`absolute top-0 left-0 w-full bg-gray-700 text-white px-6 py-6 cursor-pointer transition-all duration-500 ease-in-out
           ${activeSection === 'top' ? 'h-full z-20' : activeSection === 'bottom' ? 'h-0 z-10' : 'h-1/2 z-10'}
         `}
       >
         <div className="flex flex-col h-full">
-          <h2 className="text-2xl font-bold mb-6">Things which I am proud of</h2>
+          <h2 className="text-2xl font-semibold mb-6">Things which I am proud of</h2>
           {activeSection === 'top' && (
             <ul className="list-disc list-inside space-y-3 text-white text-base flex-grow overflow-y-auto pr-2">
-              <li>Built a full-stack product from scratch</li>
-              <li>Led a team of 5 engineers</li>
-              <li>Mentored junior developers and interns</li>
-              <li>Presented at international conferences</li>
-              <li>Improved CI/CD pipelines and reduced deployment time</li>
+              <li>Bagged a Day-1 placement offer on-campus</li>
+              <li>Got interviewed by Ruskin Bond and Chetan Bhagat when I was 11 . (big W)</li>
+              <li>Received 1 lac rupees talent scholarship in the seventh grade</li>
+              <li>Became House Captain within a few months of joining</li>
+              <li>Qualified every year for second level math/science olympiads</li>
+              <li>Moved to compeletely new cities for my college and work</li>
             </ul>
           )}
         </div>
@@ -133,25 +134,25 @@ const Card: React.FC = () => {
 
       {/* Divider line */}
       {activeSection === 'none' && (
-        <div className="absolute top-1/2 left-0 w-full border-t border-gray-300 z-10" />
+        <div className="absolute top-1/2 left-0 w-full border-t border-cyan-600 z-10" />
       )}
 
       {/* Bottom section */}
       <div
         onClick={handleBottomClick}
-        className={`absolute bottom-0 left-0 w-full bg-white text-gray-800 px-6 py-6 cursor-pointer transition-all duration-500 ease-in-out
+        className={`absolute bottom-0 left-0 w-full bg-gray-800 text-cyan-400 px-6 py-6 cursor-pointer transition-all duration-500 ease-in-out
           ${activeSection === 'bottom' ? 'h-full z-20' : activeSection === 'top' ? 'h-0 z-10' : 'h-1/2 z-10'}
         `}
       >
         <div className="flex flex-col h-full">
-          <h2 className="text-2xl font-bold mb-6">Things which shaped me</h2>
+          <h2 className="text-2xl font-semibold mb-6">Things which shaped me</h2>
           {activeSection === 'bottom' && (
-            <ul className="list-disc list-inside space-y-3 text-gray-700 text-base flex-grow overflow-y-auto pr-2">
-              <li>Struggled through competitive exams</li>
-              <li>Moved to a new city alone</li>
-              <li>Learned from early product failures</li>
-              <li>Volunteered in community tech events</li>
-              <li>Practiced consistent journaling and reflection</li>
+            <ul className="list-disc list-inside space-y-3 text-white text-base flex-grow overflow-y-auto pr-2">
+              <li>Struggled immensely through competitive exams</li>
+              <li>Failed to build a deeply technical profile in college</li>
+              <li>Extremely reserved in public forums , classes and friend groups</li>
+              <li>Hesitated to apply for global academic opportunites due to cost</li>
+              <li>Lack of investment in a side hustle/passion project before corporate</li>
             </ul>
           )}
         </div>

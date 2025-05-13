@@ -146,22 +146,22 @@ const timelineData = [
   {
     year: "2023",
     title: "Stepped into software in corporate",
-    description: "Began my undergraduate journey in CS with a deep curiosity for building useful tools.",
+    description: "Got introduced to the world of stories, bugs, quick calls, TT and free goodies/trips"
   },
   {
     year: "2020",
     title: "Enrolled in a Computer Science degree",
-    description: "Developed a project that automated college event registrations. Learned React, Node, and databases.",
+    description: "Created lifetime memories, questioned Engg multiple times, got to know myself more than I might've wanted to",
   },
   {
     year: "2018",
     title: "Wrote my first piece of code",
-    description: "Worked at the intersection of tech and social good, contributing to rural health outreach tools.",
+    description: "School's AC computer lab- did a little Turtle programming, felt like on top of the world writing basic VB codes",
   },
   {
     year: "2015",
-    title: "",
-    description: "Showcased my values and projects that blend product, tech, and social welfare.",
+    title: "Saw myself as a future journalist/writer",
+    description: "Left greasy fingerprints on books, wrote short stories/poems, ",
   },
 ];
 
