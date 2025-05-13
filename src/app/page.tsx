@@ -5,46 +5,40 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import {
   FaTableTennis,
-  FaPlane,
-  FaBook,
   FaMusic,
   FaCode,
-  FaBrain,
-  FaComments,
-  FaCheckCircle,
   FaHeartbeat,
-  FaRegLightbulb,
   FaBookReader, 
   FaEnvelope,
   FaBullhorn,
   FaLinkedin,
-  FaArrowRight,
-  FaGithub,
+  // FaArrowRight,
+  // FaGithub,
   FaLightbulb,
   FaBroom,
 } from "react-icons/fa";
 import PersonalProgressTimeline from "../components/PersonalProgressTimeline";
 import ExpandableCards from "../components/ExpandableCards";
 // import ResumeButton from "../components/ResumeButton";
-import { EB_Garamond } from 'next/font/google';
-import { Typewriter } from "react-simple-typewriter";
-import { Frank_Ruhl_Libre } from 'next/font/google';
+// import { EB_Garamond } from 'next/font/google';
+// import { Typewriter } from "react-simple-typewriter";
+// import { Frank_Ruhl_Libre } from 'next/font/google';
 import { Raleway } from 'next/font/google';
-import { Inter } from 'next/font/google';
-import { Bebas_Neue } from 'next/font/google';
+// import { Inter } from 'next/font/google';
+// import { Bebas_Neue } from 'next/font/google';
 
-const garamond = EB_Garamond({
-  subsets: ['latin'],
-  weight: ['400', '600', '700'], // choose weights you want
-  variable: '--font-garamond',
-  display: 'swap',
-});
+// const garamond = EB_Garamond({
+//   subsets: ['latin'],
+//   weight: ['400', '600', '700'], // choose weights you want
+//   variable: '--font-garamond',
+//   display: 'swap',
+// });
 
-const frankRuhlLibre = Frank_Ruhl_Libre({
-  subsets: ['latin'],
-  weight: ['300', '400', '500'],
-  variable: '--font-frank',
-});
+// const frankRuhlLibre = Frank_Ruhl_Libre({
+//   subsets: ['latin'],
+//   weight: ['300', '400', '500'],
+//   variable: '--font-frank',
+// });
 
 const raleway = Raleway({
   subsets: ['latin'],
@@ -52,16 +46,16 @@ const raleway = Raleway({
   variable: '--font-raleway',
 });
 
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-inter',
-});
+// const inter = Inter({
+//   subsets: ['latin'],
+//   weight: ['400', '500', '600', '700'],
+//   variable: '--font-inter',
+// });
 
-const bebasNeue = Bebas_Neue({
-  weight: ['400'],
-  subsets: ['latin'],
-});
+// const bebasNeue = Bebas_Neue({
+//   weight: ['400'],
+//   subsets: ['latin'],
+// });
 
 const iconVariant = {
   hidden: { opacity: 0, y: 30 },
@@ -78,7 +72,7 @@ const iconVariant = {
 
 export default function Home() {
   const [activePanel, setActivePanel] = useState<"first" | "last" | null>(null);
-  const [isHovered, setIsHovered] = useState(false);
+  // const [isHovered, setIsHovered] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [hoveredPanel, setHoveredPanel] = useState<"first" | "last" | null>(null);
 
