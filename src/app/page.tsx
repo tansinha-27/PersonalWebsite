@@ -1,5 +1,5 @@
 "use client";
-import { useState , useEffect , useRef } from "react";
+import { useState , useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 
@@ -73,7 +73,7 @@ const iconVariant = {
 export default function Home() {
   const [activePanel, setActivePanel] = useState<"first" | "last" | null>(null);
   // const [isHovered, setIsHovered] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  // const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [hoveredPanel, setHoveredPanel] = useState<"first" | "last" | null>(null);
 
 
@@ -83,9 +83,9 @@ export default function Home() {
     setActivePanel(panel);
   };
 
-  useEffect(() => {
-    setIsTouchDevice("ontouchstart" in window || navigator.maxTouchPoints > 0);
-  }, []);
+  // useEffect(() => {
+  //   setIsTouchDevice("ontouchstart" in window || navigator.maxTouchPoints > 0);
+  // }, []);
 
   const getVideoSource = (): string | undefined =>  {
     if (hoveredPanel === "first") return "/videos/myvideo.mp4";
