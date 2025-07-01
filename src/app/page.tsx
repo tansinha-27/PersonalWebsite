@@ -1,6 +1,8 @@
 "use client";
 import { useState} from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Download } from "lucide-react";
+
 
 
 import {
@@ -16,6 +18,7 @@ import {
   // FaGithub,
   FaLightbulb,
   FaBroom,
+  FaGithub,
 } from "react-icons/fa";
 import PersonalProgressTimeline from "../components/PersonalProgressTimeline";
 import ExpandableCards from "../components/ExpandableCards";
@@ -87,21 +90,33 @@ export default function Home() {
   //   setIsTouchDevice("ontouchstart" in window || navigator.maxTouchPoints > 0);
   // }, []);
 
-  const getVideoSource = (): string | undefined =>  {
-    if (hoveredPanel === "first") return "/videos/myvideo.mp4";
-    if (hoveredPanel === "last") return "/videos/myvideo2.mp4";
-    return undefined;
+  // const getVideoSource = (): string | undefined =>  {
+  //   if (hoveredPanel === "first") return "/videos/myvideo.mp4";
+  //   if (hoveredPanel === "last") return "/videos/myvideo2.mp4";
+  //   return undefined;
+  // };
+
+  const handleDownloadResume = () => {
+    // Add your resume download logic here
+    const link = document.createElement("a");
+    link.href = "/Tanishaa_resume.pdf";
+    link.download = "Tanishaa_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    console.log('Downloading resume...');
   };
+
 
   
 
   return (
+
     
-    <div className="min-h-screen w-screen relative overflow-hidden text-center bg-white scroll-smooth">
+    <div className="min-h-screen w-screen relative text-center bg-white scroll-smooth absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100">
       {/* <main>
       <Hero />
     </main> */}
-       <div className="absolute top-4 right-4 z-20">
          {/* <a
           href="/resume.pdf"
           download
@@ -132,9 +147,19 @@ export default function Home() {
     <FaArrowRight className="text-black group-hover:text-white transition-colors duration-300 ease-in-out" />
   </span>
 </a> */}
+
+
+<button
+        onClick={handleDownloadResume}
+        className="fixed top-8 right-8 flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg hover:bg-cyan-700 hover:shadow-xl transition-all duration-300 z-40"
+      >
+        <Download size={18} />
+        <span className="text-sm font-medium">Resume</span>
+      </button>
+
       
         
-      </div> 
+      
       {/* <video
         className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 z-10 ${isHovered ? 'opacity-40' : 'opacity-0'}`}
         src="/videos/myvideo.mp4" // Replace with your video path
@@ -156,17 +181,17 @@ export default function Home() {
         />
       )} */}
 
-{hoveredPanel && (
+
   <video
-    key={hoveredPanel} // ensures re-render on panel switch
-    className="absolute top-0 left-0 w-full h-full object-cover opacity-40 transition-opacity duration-500 z-10 pointer-events-none"
-    src={getVideoSource()!}
+    // key={hoveredPanel} // ensures re-render on panel switch
+    className="absolute top-0 left-0 w-full h-full object-cover opacity-40 transition-opacity duration-500 z-0 pointer-events-none"
+    src= "/videos/myvideo.mp4"
     autoPlay
     loop
     muted
     playsInline
   />
-)}
+
 
 
 
@@ -202,7 +227,7 @@ export default function Home() {
         >
           Tanishaa
           <sup className="text-xs sm:text-base align-top text-gray-500 transition-all duration-200 group-hover:text-sm group-hover:sm:text-lg">
-            [personal] </sup>
+          {hoveredPanel === "first" ? "[curious human]" : "[personal]"} </sup>
           </motion.div>
 
         <motion.div
@@ -231,9 +256,17 @@ export default function Home() {
           onKeyDown={(e) => e.key === "Enter" && handleClick("last")}
         >
           Sinha
-          <sup className="text-xs sm:text-base align-top text-gray-500 transition-all duration-200 group-hover:text-sm group-hover:sm:text-lg">[professional]</sup>
+          <sup className="text-xs sm:text-base align-top text-gray-500 transition-all duration-200 group-hover:text-sm group-hover:sm:text-lg">{hoveredPanel==="last" ? "[builder]" : "[professional]"}</sup>
 
         </motion.div>
+
+{/*                
+        <div 
+          className={`absolute top-1/2 left-0 w-full h-px bg-slate-300 transition-opacity duration-300 z-10 ${
+            hoveredPanel !== 'null' ? 'opacity-100' : 'opacity-0'
+          }`} 
+        >
+      </div> */}
 
                   
           {/* <motion.div
@@ -255,17 +288,69 @@ export default function Home() {
             </span>
             </motion.div> */}
 
-        <div className="flex space-x-6 mt-10 text-2xl sm:text-3xl text-gray-600">
+        {/* <div className="flex space-x-6 mt-10 text-2xl sm:text-3xl text-gray-600">
           <a href="mailto:sinhatan2002@gmail.com" target="_blank" rel="noopener noreferrer">
             <FaEnvelope />
           </a>
           <a href="https://www.linkedin.com/in/tansinha/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
-          </a>
+          </a> */}
           {/* <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </a> */}
-        </div>
+        {/* </div> */}
+
+        {/* <div className="flex justify-center gap-6 mt-8">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white hover:scale-110 transition-all duration-300 shadow-lg"
+              >
+                <FaGithub size={24} className="text-slate-700" />
+              </a>
+              <a
+                href="https://linkedin.com/in/tansinha/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white hover:scale-110 transition-all duration-300 shadow-lg"
+              >
+                <FaLinkedin size={24} className="text-slate-700" />
+              </a>
+              <a href="mailto:sinhatan2002@gmail.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white hover:scale-110 transition-all duration-300 shadow-lg"
+              >
+            <FaEnvelope size={24} className="text-slate-700"  />
+          </a>
+            </div> */}
+
+<div className="flex justify-center gap-4 sm:gap-6 mt-8">
+  {[
+    {
+      href: "https://github.com",
+      icon: <FaGithub className="text-slate-700 transition-colors duration-300 group-hover:text-black" />,
+    },
+    {
+      href: "https://linkedin.com/in/tansinha/",
+      icon: <FaLinkedin className="text-slate-700 transition-colors duration-300 group-hover:text-[#0077B5]" />,
+    },
+    {
+      href: "mailto:sinhatan2002@gmail.com",
+      icon: <FaEnvelope className="text-slate-700 transition-colors duration-300 group-hover:text-red-500" />,
+    },
+  ].map(({ href, icon }, idx) => (
+    <a
+      key={idx}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group p-3 sm:p-4 rounded-full bg-white/80 backdrop-blur-sm shadow-lg hover:bg-white transform transition-all duration-500 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+    >
+      <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex items-center justify-center">
+        {icon}
+      </div>
+    </a>
+  ))}
+</div>
         
       </div>  
 
@@ -453,7 +538,7 @@ export default function Home() {
 
             {activePanel === "last" && (
               <div className={`${raleway.className}`}>
-              <h1 className="text-6xl font-semibold mb-6">Tanishaa <span className="text-cyan-400 font-semibold">OS</span></h1>
+              {/* <h1 className="text-6xl font-semibold mb-6">Tanishaa <span className="text-cyan-400 font-semibold">OS</span></h1>
                 <p className="text-lg mb-8 text-gray-300 max-w-3xl mx-auto">A living, evolving product – continuously improving through feedback, experiments, and real-world testing.</p>
 
                 <div className="mt-10">
@@ -555,7 +640,9 @@ export default function Home() {
                       <strong>[Fix]</strong> Hesitation in personal branding — taking my first step through this portfolio website
                     </li>
                   </ul>
-                </div>
+                </div> */}
+
+                
               </div>
             )}
           </motion.div>
