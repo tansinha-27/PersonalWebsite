@@ -22,6 +22,7 @@ import {
 } from "react-icons/fa";
 import PersonalProgressTimeline from "../components/PersonalProgressTimeline";
 import ExpandableCards from "../components/ExpandableCards";
+import Index from "../components/index";
 // import ResumeButton from "../components/ResumeButton";
 // import { EB_Garamond } from 'next/font/google';
 // import { Typewriter } from "react-simple-typewriter";
@@ -256,7 +257,7 @@ export default function Home() {
           onKeyDown={(e) => e.key === "Enter" && handleClick("last")}
         >
           Sinha
-          <sup className="text-xs sm:text-base align-top text-gray-500 transition-all duration-200 group-hover:text-sm group-hover:sm:text-lg">{hoveredPanel==="last" ? "[builder]" : "[professional]"}</sup>
+          <sup className="text-xs sm:text-base align-top text-gray-500 transition-all duration-200 group-hover:text-sm group-hover:sm:text-lg">{hoveredPanel==="last" ? "[bring ideas to life]" : "[professional]"}</sup>
 
         </motion.div>
 
@@ -393,8 +394,8 @@ export default function Home() {
     className={`${raleway.className} flex flex-col md:flex-row gap-6 md:gap-10 mt-12 px-4 sm:px-6 md:px-12`}
   >
     {/* Left Section */}
-    <div className="w-full md:w-1/2 text-left">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+    <div className="w-full h-screen ">
+      {/* <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
         Hi.
       </h1>
 
@@ -426,18 +427,19 @@ export default function Home() {
        So here I stand now - ready to explore , fail and learn henceforth
     </p>
 
-    {/*  */}
+    
       
-      {/* <Cards /> */}
       <div className="min-h-screen">
         <ExpandableCards />
-      </div>
+      </div> */}
+
+     <Index/>
        
       </div>
 
 
     {/* Right Section */}
-    <div className="w-full md:w-1/2">
+    {/* <div className="w-full md:w-1/2">
       <div className="mb-12">
         {typeof PersonalProgressTimeline !== 'undefined' ? (
           <PersonalProgressTimeline />
@@ -447,10 +449,10 @@ export default function Home() {
       </div>
 
 
-    </div>
+    </div> */}
     
   </motion.div>
-
+{/* 
     <div className="mt-12 px-4 sm:px-6 md:px-12 text-center">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-raleway font-light text-white mb-14">
         What we can connect over
@@ -481,49 +483,8 @@ export default function Home() {
     </motion.div>
   ))}
 </div>
-      {/* <div className="mt-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-y-8 justify-items-center"> */}
-          {/* <div className="flex flex-col items-center text-white text-5xl">
-          <FaCode className="mb-2"></FaCode>
-          <span className="text-base">Tech & Software</span>
-
-        </div>
-        <div className="flex flex-col items-center text-white text-5xl">
-          <FaBullhorn className="mb-2"></FaBullhorn>
-          <span className="text-base">Podcasts</span>
-
-        </div>
-        <div className="flex flex-col items-center text-white text-5xl">
-          <FaHeartbeat className="mb-2"></FaHeartbeat>
-          <span className="text-base">Social welfare</span>
-
-        </div>
-        <div className="flex flex-col items-center text-white text-5xl">
-          <FaLightbulb className="mb-2"></FaLightbulb>
-          <span className="text-base">Product Ideas</span>
-
-        </div>
-        <div className="flex flex-col items-center text-white text-5xl">
-          <FaBookReader className="mb-2"></FaBookReader>
-          <span className="text-base">Book Recs</span>
-
-        </div>
-        <div className="flex flex-col items-center text-white text-5xl">
-          <FaMusic className="mb-2"></FaMusic>
-          <span className="text-base">Singing</span>
-
-        </div>
-        <div className="flex flex-col items-center text-white text-5xl">
-          <FaTableTennis className="mb-2"></FaTableTennis>
-          <span className="text-base">TT</span>
-
-        </div>
-        <div className="flex flex-col items-center text-white text-5xl">
-          <FaBroom className="mb-2"></FaBroom>
-          <span className="text-base">Harry Potter</span>
-
-        </div>
-      </div> */}
-    </div>
+      
+    </div> */}
 
 
 
@@ -538,7 +499,7 @@ export default function Home() {
 
             {activePanel === "last" && (
               <div className={`${raleway.className}`}>
-              {/* <h1 className="text-6xl font-semibold mb-6">Tanishaa <span className="text-cyan-400 font-semibold">OS</span></h1>
+              <h1 className="text-6xl font-semibold mb-6">Tanishaa <span className="text-cyan-400 font-semibold">OS</span></h1>
                 <p className="text-lg mb-8 text-gray-300 max-w-3xl mx-auto">A living, evolving product – continuously improving through feedback, experiments, and real-world testing.</p>
 
                 <div className="mt-10">
@@ -640,7 +601,7 @@ export default function Home() {
                       <strong>[Fix]</strong> Hesitation in personal branding — taking my first step through this portfolio website
                     </li>
                   </ul>
-                </div> */}
+                </div>
 
                 
               </div>
