@@ -6,22 +6,14 @@ import { Download } from "lucide-react";
 
 
 import {
-  FaTableTennis,
-  FaMusic,
-  FaCode,
-  FaHeartbeat,
-  FaBookReader, 
   FaEnvelope,
-  FaBullhorn,
   FaLinkedin,
   // FaArrowRight,
-  // FaGithub,
-  FaLightbulb,
-  FaBroom,
+  // FaGithub
   FaGithub,
 } from "react-icons/fa";
-import PersonalProgressTimeline from "../components/PersonalProgressTimeline";
-import ExpandableCards from "../components/ExpandableCards";
+// import PersonalProgressTimeline from "../components/PersonalProgressTimeline";
+// import ExpandableCards from "../components/ExpandableCards";
 import Index from "../components/index";
 // import ResumeButton from "../components/ResumeButton";
 // import { EB_Garamond } from 'next/font/google';
@@ -61,18 +53,18 @@ const raleway = Raleway({
 //   subsets: ['latin'],
 // });
 
-const iconVariant = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.5,
-      ease: 'easeOut',
-    },
-  }),
-};
+// const iconVariant = {
+//   hidden: { opacity: 0, y: 30 },
+//   visible: (i: number) => ({
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       delay: i * 0.1,
+//       duration: 0.5,
+//       ease: 'easeOut',
+//     },
+//   }),
+// };
 
 export default function Home() {
   const [activePanel, setActivePanel] = useState<"first" | "last" | null>(null);

@@ -26,7 +26,7 @@ export const MeNowSection = () => {
               challenge with both analytical rigor and creative thinking.
             </p>
             <p>
-              My core values haven't changed since those early days of curiosity: build things that matter, 
+              My core values haven&apos;t changed since those early days of curiosity: build things that matter, 
               write code that lasts, and always be learning. Currently focused on modern web architectures, 
               AI integration, and creating developer experiences that spark joy.
             </p>

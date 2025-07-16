@@ -1,5 +1,5 @@
 
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+// import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import { HeroSection } from '@/components/sections/HeroSection';
@@ -23,7 +23,7 @@ const Index = () => {
   console.log('Sections:', sections);
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentSection, setCurrentSection] = useState(0);
-  const [isClosing, setIsClosing] = useState(false);
+  const [setIsClosing] = useState(false);
   
   useEffect(() => {
     const container = containerRef.current;
@@ -41,18 +41,18 @@ const Index = () => {
     return () => container.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleClose = () => {
-    setIsClosing(true);
-    // Add any close logic here
-  };
+//   const handleClose = () => {
+//     setIsClosing(true);
+//     // Add any close logic here
+//   };
 
-  const CurrentComponent = sections[currentSection]?.component || HeroSection;
+//   const CurrentComponent = sections[currentSection]?.component || HeroSection;
 
   return (
     <div className="relative">
       {/* Close Button */}
       <button
-        onClick={handleClose}
+        // onClick={handleClose}
         className="fixed top-6 right-6 z-50 p-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white/90 transition-colors"
       >
         <X className="w-5 h-5 text-slate-600" />

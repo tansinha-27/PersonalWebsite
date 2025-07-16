@@ -21,7 +21,7 @@ export const FormativeYearsSection = () => {
           </h2>
           <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
             <p>
-              University wasn't just about algorithms and data structures—it was about learning to think 
+              University wasn&apos;t just about algorithms and data structures—it was about learning to think 
               systematically, to break down impossible problems into manageable pieces. My first real 
               build was embarrassingly basic, but it worked.
             </p>

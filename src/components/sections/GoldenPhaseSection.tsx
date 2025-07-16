@@ -31,8 +31,8 @@ export const GoldenPhaseSection = () => {
               publications. Not just for the technical achievement, but for solving a genuine human problem.
             </p>
             <p>
-              This phase taught me that great technology isn't about complexity—it's about clarity, 
-              reliability, and the seamless experience that makes users forget they're using technology at all.
+              This phase taught me that great technology isn&apos;t about complexity—it&apos;s about clarity, 
+              reliability, and the seamless experience that makes users forget they&apos;re using technology at all.
             </p>
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}

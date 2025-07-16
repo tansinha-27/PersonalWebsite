@@ -28,10 +28,10 @@ export const ConnectSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-8">
-            Let's Connect
+            Let&apos;s Connect
           </h2>
           <p className="text-xl text-slate-700 mb-12 leading-relaxed max-w-2xl mx-auto">
-            Beyond the code, I'm passionate about specialty coffee, sustainable technology, 
+            Beyond the code, I&apos;m passionate about specialty coffee, sustainable technology, 
             and the intersection of design and engineering. Always excited to collaborate on 
             projects that push boundaries.
           </p>
@@ -69,7 +69,7 @@ export const ConnectSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="mt-6 text-sky-600 font-medium"
               >
-                Great choice! Let's dive into that conversation.
+                Great choice! Let&apos;s dive into that conversation.
               </motion.p>
             )}
           </motion.div>

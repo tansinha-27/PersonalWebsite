@@ -28,7 +28,7 @@ export const OriginStorySection = () => {
             <p>
               That pivotal moment came at age 12 when I successfully fixed our family computer—not just 
               hardware, but diving deep into the software that made it tick. The rush of problem-solving, 
-              the satisfaction of creation, the endless possibilities ahead. That's when I knew.
+              the satisfaction of creation, the endless possibilities ahead. That&apos;s when I knew.
             </p>
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
