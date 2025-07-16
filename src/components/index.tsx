@@ -23,7 +23,7 @@ const Index = () => {
   console.log('Sections:', sections);
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentSection, setCurrentSection] = useState(0);
-  const [setIsClosing] = useState(false);
+//   const [setIsClosing] = useState(false);
   
   useEffect(() => {
     const container = containerRef.current;

@@ -29,7 +29,7 @@ export const HeroSection = () => {
         </h1>
         
         <div className="text-2xl md:text-3xl text-slate-600 font-medium mb-16">
-          I'm a
+          I&apos;m a
           <span className="relative inline-flex w-32 justify-center overflow-hidden">
             {/* {titles.map((title, index) => (
               <motion.span
