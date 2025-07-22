@@ -24,13 +24,13 @@ export const HeroSection = () => {
         transition={{ duration: 0.8, delay: 0.3 }}
         className="text-center z-10 px-8"
       >
-        <h1 className="text-6xl md:text-8xl text-slate-900 mb-6">
+        <h1 className="text-6xl md:text-7xl text-slate-900 mb-6">
           <span className="font-bold">Hi</span>, this is me beyond my resume
         </h1>
         
         <div className="text-2xl md:text-3xl text-slate-600 font-medium mb-16">
           I&apos;m a
-          <span className="relative inline-flex w-32 justify-center overflow-hidden">
+          <span className="relative inline-flex w-34 justify-center items-end overflow-hidden ml-2 mt-2 " style={{ height: '2.5rem' }}>
             {/* {titles.map((title, index) => (
               <motion.span
                 key={index}
@@ -58,9 +58,11 @@ export const HeroSection = () => {
       key={titles[titleNumber]}
       className="absolute font-semibold text-sky-600"
       initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
+      animate={{ opacity: 1, y: 8 }}
       exit={{ opacity: 0, y: -30 }}
       transition={{ duration: 0.5 }}
+      style={{ lineHeight: '1.25' }}
+
     >
       {titles[titleNumber]}
     </motion.span>

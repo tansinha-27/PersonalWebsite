@@ -1,7 +1,10 @@
-"use client";
+'use client';
+
+
 import { useState} from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Download } from "lucide-react";
+import { Download, X } from "lucide-react";
+// import '../app/globals.css';
 
 
 
@@ -15,6 +18,7 @@ import {
 // import PersonalProgressTimeline from "../components/PersonalProgressTimeline";
 // import ExpandableCards from "../components/ExpandableCards";
 import Index from "../components/index";
+import Dashboard from "@/components/Dashboard";
 // import ResumeButton from "../components/ResumeButton";
 // import { EB_Garamond } from 'next/font/google';
 // import { Typewriter } from "react-simple-typewriter";
@@ -141,7 +145,7 @@ export default function Home() {
   </span>
 </a> */}
 
-
+{!activePanel && (
 <button
         onClick={handleDownloadResume}
         className="fixed top-8 right-8 flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg hover:bg-cyan-700 hover:shadow-xl transition-all duration-300 z-40"
@@ -149,7 +153,7 @@ export default function Home() {
         <Download size={18} />
         <span className="text-sm font-medium">Resume</span>
       </button>
-
+)}
       
         
       
@@ -383,8 +387,9 @@ export default function Home() {
     initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
-    className={`${raleway.className} flex flex-col md:flex-row gap-6 md:gap-10 mt-12 px-4 sm:px-6 md:px-12`}
-  >
+    className="fixed inset-0 bg-gray-950 text-white z-30 overflow-y-auto scroll-smooth">
+
+  
     {/* Left Section */}
     <div className="w-full h-screen ">
       {/* <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
@@ -424,6 +429,30 @@ export default function Home() {
       <div className="min-h-screen">
         <ExpandableCards />
       </div> */}
+        {/* <button
+        onClick={() => setActivePanel(null)}
+        className="fixed top-6 right-6 z-50 p-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white/90 transition-colors"
+      >
+      <X className="w-5 h-5 text-slate-600" />
+      </button> */}
+            <div className="absolute top-4 right-4">
+              <button
+                onClick={() => setActivePanel(null)}
+                className="text-white text-base px-5 py-1.5 rounded-full
+                  bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900
+                  border border-gray-700/50
+                  shadow-[2px_2px_6px_0_rgba(0,0,0,0.2),-2px_-2px_6px_0_rgba(255,255,255,0.05)]
+                  hover:shadow-[inset_2px_2px_6px_0_rgba(0,0,0,0.2),inset_-2px_-2px_6px_0_rgba(255,255,255,0.05)]
+                  transition-all duration-200 ease-in-out
+                  hover:scale-[0.98]
+                  hover:border-gray-600/50
+                  focus:outline-none
+                  active:scale-95"
+                  
+              >
+                Close
+              </button>
+            </div>
 
      <Index/>
        
@@ -490,11 +519,28 @@ export default function Home() {
 
 
             {activePanel === "last" && (
-              <div className={`${raleway.className}`}>
-              <h1 className="text-6xl font-semibold mb-6">Tanishaa <span className="text-cyan-400 font-semibold">OS</span></h1>
-                <p className="text-lg mb-8 text-gray-300 max-w-3xl mx-auto">A living, evolving product – continuously improving through feedback, experiments, and real-world testing.</p>
+              <div className="fixed inset-0 overflow-y-auto scroll-smooth z-50">
+                <div className="absolute top-4 right-4">
+              <button
+                onClick={() => setActivePanel(null)}
+                className="text-white text-base px-5 py-1.5 rounded-full
+                  bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900
+                  border border-gray-700/50
+                  shadow-[2px_2px_6px_0_rgba(0,0,0,0.2),-2px_-2px_6px_0_rgba(255,255,255,0.05)]
+                  hover:shadow-[inset_2px_2px_6px_0_rgba(0,0,0,0.2),inset_-2px_-2px_6px_0_rgba(255,255,255,0.05)]
+                  transition-all duration-200 ease-in-out
+                  hover:scale-[0.98]
+                  hover:border-gray-600/50
+                  focus:outline-none
+                  active:scale-95"
+              >
+                Close
+              </button>
+            </div>
+              {/* <h1 className="text-6xl font-semibold mb-6">Tanishaa <span className="text-cyan-400 font-semibold">OS</span></h1>
+                <p className="text-lg mb-8 text-gray-300 max-w-3xl mx-auto">A living, evolving product – continuously improving through feedback, experiments, and real-world testing.</p> */}
 
-                <div className="mt-10">
+                {/* <div className="mt-10">
                   <h3 className="text-2xl font-semibold mb-4">KPI <span className="text-cyan-400">Dashboard</span></h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div className="bg-gray-800 p-4 rounded-lg shadow text-center">
@@ -510,9 +556,9 @@ export default function Home() {
                       <p className="text-sm text-gray-400">Honors/Awards</p>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
-                <div className="mt-10">
+                {/* <div className="mt-10">
                   <h3 className="text-2xl font-semibold mb-4">Product <span className="text-cyan-400">Specs</span></h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     <div className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform">CI/CD </div>
@@ -535,8 +581,8 @@ export default function Home() {
 
 
                   </div>
-                </div>
-
+                </div> */}
+{/* 
                 <div className="mt-10">
                   <h3 className="text-2xl font-semibold mb-4">Feature <span className="text-cyan-400"> Comparison</span></h3>
                   <table className="table-auto w-full text-left border border-gray-700">
@@ -575,9 +621,9 @@ export default function Home() {
                       </tr>
                     </tbody>
                   </table>
-                </div>
+                </div> */}
 
-                <div className="mt-10">
+                {/* <div className="mt-10">
                   <h3 className="text-2xl font-semibold mb-4">Bug Fixes & <span className="text-cyan-400">Improvements</span></h3>
                   <ul className="space-y-4">
                     <li className="bg-gray-800 p-4 rounded-lg shadow">
@@ -593,7 +639,9 @@ export default function Home() {
                       <strong>[Fix]</strong> Hesitation in personal branding — taking my first step through this portfolio website
                     </li>
                   </ul>
-                </div>
+                </div> */}
+                <Dashboard/>
+
 
                 
               </div>

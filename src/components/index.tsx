@@ -87,7 +87,7 @@ const Index = () => {
       {/* Scroll Container */}
       <div 
         ref={containerRef} 
-        className="w-full h-screen overflow-y-scroll snap-y snap-mandatory"
+        className="fixed inset-0 overflow-y-scroll snap-y snap-mandatory"
         style={{ 
           scrollbarWidth: 'none', 
           msOverflowStyle: 'none'
