@@ -23,21 +23,21 @@ export function FeatureComparison({
   const getIcon = (status: 'full' | 'partial' | 'none') => {
     switch (status) {
       case 'full':
-        return <Check className="h-4 w-4 text-success" />;
+        return <Check className="h-4 w-4 text-green-300" />;
       case 'partial':
-        return <AlertTriangle className="h-4 w-4 text-warning" />;
+        return <AlertTriangle className="h-4 w-4 text-yellow-400" />;
       case 'none':
         return <X className="h-4 w-4 text-destructive" />;
     }
   };
 
   return (
-    <Card className="p-6 bg-dashboard-surface border-dashboard-border">
-      <h3 className="text-lg font-semibold text-foreground mb-6">{title}</h3>
+    <Card className="p-6 bg-black">
+      <h3 className="text-lg font-semibold text-foreground mb-6 text-left">{title}</h3>
       
       <div className="space-y-4">
         {/* Header */}
-        <div className="grid grid-cols-3 gap-4 text-sm font-medium text-muted-foreground border-b border-dashboard-border pb-3">
+        <div className="grid grid-cols-3 gap-4 text-sm font-medium text-muted-foreground border-b border-dashboard-border pb-3 text-left">
           <div>Feature</div>
           <div className="text-center">{currentLabel}</div>
           <div className="text-center">{competitorLabel}</div>
@@ -46,7 +46,7 @@ export function FeatureComparison({
         {/* Features */}
         {features.map((feature, index) => (
           <div key={index} className="grid grid-cols-3 gap-4 items-center py-3 border-b border-dashboard-border/50 last:border-b-0">
-            <div className="text-sm text-foreground">{feature.name}</div>
+            <div className="text-sm text-gray-300 text-left">{feature.name}</div>
             <div className="flex justify-center">
               {getIcon(feature.current)}
             </div>

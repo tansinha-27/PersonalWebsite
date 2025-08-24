@@ -51,12 +51,13 @@ const Index = () => {
   return (
     <div className="relative">
       {/* Close Button */}
-      <button
-        // onClick={handleClose}
+      {/* <button
+        onClick={() => setActivePanel(null)}
         className="fixed top-6 right-6 z-50 p-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white/90 transition-colors"
       >
         <X className="w-5 h-5 text-slate-600" />
-      </button>
+      </button> */}
+      
 
       {/* Timeline */}
       <div className="fixed left-10 top-1/2 -translate-y-1/2 z-40 space-y-4">

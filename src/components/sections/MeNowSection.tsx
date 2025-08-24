@@ -16,6 +16,142 @@ export const MeNowSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
+            <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-12 flex justify-center items-center"
+          >
+            <svg 
+              width="400" 
+              height="120" 
+              viewBox="0 0 400 120" 
+              className="text-cyan-500"
+            >
+              {/* Laptop with lightbulb */}
+              <motion.g
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.5 }}
+              >
+                <motion.path
+                  d="M30,70 L80,70 L85,80 L25,80 Z M35,50 L75,50 L75,70 L35,70 Z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill="none"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 1 }}
+                />
+                {/* Lightbulb */}
+                <motion.circle
+                  cx="55"
+                  cy="55"
+                  r="8"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill="none"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 1.5 }}
+                />
+                <motion.path
+                  d="M48,55 L62,55 M52,52 L58,52 M52,58 L58,58"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 2 }}
+                />
+              </motion.g>
+
+              {/* Stack of items */}
+              <motion.g
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 2.5 }}
+              >
+                <motion.path
+                  d="M120,75 L160,75 L160,80 L120,80 Z M125,70 L155,70 L155,75 L125,75 Z M130,65 L150,65 L150,70 L130,70 Z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill="none"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 3 }}
+                />
+              </motion.g>
+
+              {/* Magnifying glass */}
+              <motion.g
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 3.5 }}
+              >
+                <motion.circle
+                  cx="200"
+                  cy="65"
+                  r="12"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill="none"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 4 }}
+                />
+                <motion.path
+                  d="M210,75 L220,85"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 4.5 }}
+                />
+              </motion.g>
+
+              {/* Microphone */}
+              <motion.g
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 4.5 }}
+              >
+                <motion.path
+                  d="M270,50 L270,70 M260,70 Q260,80 270,80 Q280,80 280,70 M275,85 L275,90 L265,90"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  fill="none"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 5 }}
+                />
+                <motion.path
+                  d="M265,50 L275,50 L275,65 L265,65 Z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill="none"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 5.5 }}
+                />
+              </motion.g>
+
+            </svg>
+          </motion.div>
           <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-8">
             Me Now
           </h2>

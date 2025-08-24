@@ -16,6 +16,97 @@ export const GoldenPhaseSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-12 flex justify-center"
+          >
+            <svg 
+              width="350" 
+              height="120" 
+              viewBox="0 0 350 120" 
+              className="text-cyan-500"
+            >
+              {/* Curved path connecting two locations */}
+              <motion.path
+                d="M100,70 Q175,30 250,70"
+                stroke="currentColor"
+                strokeWidth="2"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                initial={{ pathLength: 0 }}
+                whileInView={{ pathLength: 1 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  duration: 2,
+                  delay: 0.5,
+                  ease: "easeInOut"
+                }}
+              />
+              
+              {/* First location pin */}
+              <motion.g
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 2.5 }}
+              >
+                <motion.path
+                  d="M100,70 Q95,65 95,60 Q95,55 100,50 Q105,55 105,60 Q105,65 100,70 Z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill="none"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 3 }}
+                />
+                <motion.circle
+                  cx="100"
+                  cy="57"
+                  r="2"
+                  fill="currentColor"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 3.5 }}
+                />
+              </motion.g>
+              
+              {/* Second location pin */}
+              <motion.g
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 3.2 }}
+              >
+                <motion.path
+                  d="M250,70 Q245,65 245,60 Q245,55 250,50 Q255,55 255,60 Q255,65 250,70 Z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill="none"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 3.7 }}
+                />
+                <motion.circle
+                  cx="250"
+                  cy="57"
+                  r="2"
+                  fill="currentColor"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 4.2 }}
+                />
+              </motion.g>
+            </svg>
+          </motion.div>
+          
           <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-8">
             Golden Phase
           </h2>

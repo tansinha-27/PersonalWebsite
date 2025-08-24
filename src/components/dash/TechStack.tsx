@@ -21,13 +21,13 @@ export function TechStack({ title, items }: TechStackProps) {
   }, {} as Record<string, string[]>);
 
   return (
-    <Card className="p-6 bg-dashboard-surface border-dashboard-border">
-      <h3 className="text-lg font-semibold text-foreground mb-6">{title}</h3>
+    <Card className="p-6 bg-black">
+      <h3 className="text-lg font-semibold text-foreground mb-6 text-left">{title}</h3>
       
       <div className="space-y-6">
         {Object.entries(groupedItems).map(([category, techs]) => (
           <div key={category} className="space-y-3">
-            <h4 className="text-sm font-medium text-primary">{category}</h4>
+            <h4 className="text-sm font-medium text-cyan-300 text-left">{category}</h4>
             <div className="flex flex-wrap gap-2">
               {techs.map((tech) => (
                 <Badge 

@@ -4,6 +4,7 @@ import { FeatureComparison } from "@/components/dash/FeatureComparison";
 import { TechStack } from "@/components/dash/TechStack";
 import { RecentUpdates } from "@/components/dash/RecentUpdates";
 import { Activity, Users, TrendingUp, Code2, Zap, Database } from "lucide-react";
+import '../app/globals.css'
 
 const Dashboard = () => {
   // Sample data for charts
@@ -84,13 +85,19 @@ const Dashboard = () => {
   ];
 
   return (
+    <div className="dark">
     <div className="min-h-screen bg-background">
       <div className="w-full space-y-8 p-6">
         {/* Header */}
         <div className="text-center space-y-4">
+        {/* <div className="space-y-4 p-4"> */}
+  {/* <div className="bg-success text-success-foreground p-4 rounded">Success!</div>
+  <div className="bg-primary text-primary-foreground p-4 rounded">Primary Color</div>
+</div> */}
           <h1 className="text-4xl font-bold text-foreground">
-            Professional <span className="text-primary">Dashboard</span>
+            Professional <span className="text-cyan-300">Dashboard</span>
           </h1>
+
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             A modern, data-driven dashboard providing comprehensive insights and analytics 
             for enhanced decision-making and performance monitoring.
@@ -99,7 +106,7 @@ const Dashboard = () => {
 
         {/* KPI Metrics */}
         <div>
-          <h2 className="text-xl font-semibold text-primary mb-4">KPI Dashboard</h2>
+          {/* <h2 className="text-xl font-semibold text-cyan-300 mb-4">KPI Dashboard</h2> */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <MetricCard
               title="Total Users"
@@ -173,6 +180,7 @@ const Dashboard = () => {
           updates={recentUpdates}
         />
       </div>
+    </div>
     </div>
   );
 };

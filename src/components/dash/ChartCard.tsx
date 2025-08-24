@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, LineChart, Line, BarChart, Bar } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, LineChart, Line, BarChart, Bar } from "recharts";
 
 interface ChartCardProps {
   title: string;
@@ -28,20 +28,20 @@ export function ChartCard({
       case 'line':
         return (
           <LineChart {...commonProps}>
-            <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+            <CartesianGrid strokeDasharray="3 3" stroke="hsl(224 , 20% ,20%)" />
             <XAxis 
               dataKey={xAxisKey} 
-              stroke="hsl(var(--muted-foreground))"
+              stroke="hsl(215 20% 65%)"
               fontSize={12}
             />
             <YAxis 
-              stroke="hsl(var(--muted-foreground))"
+              stroke="hsl(215 20% 65%)"
               fontSize={12}
             />
             <Line 
               type="monotone" 
               dataKey={dataKey} 
-              stroke="hsl(var(--chart-primary))" 
+              stroke="oklch(0.646 0.222 41.116)" 
               strokeWidth={3}
               dot={{ fill: "hsl(var(--chart-primary))", strokeWidth: 2, r: 4 }}
             />
@@ -51,19 +51,19 @@ export function ChartCard({
       case 'bar':
         return (
           <BarChart {...commonProps}>
-            <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+            <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.646 0.222 41.116)" />
             <XAxis 
               dataKey={xAxisKey} 
-              stroke="hsl(var(--muted-foreground))"
+              stroke="hsl(215 20% 65%)"
               fontSize={12}
             />
             <YAxis 
-              stroke="hsl(var(--muted-foreground))"
+              stroke="hsl(215 20% 65%)"
               fontSize={12}
             />
             <Bar 
               dataKey={dataKey} 
-              fill="hsl(var(--chart-primary))"
+              fill="oklch(0.646 0.222 41.116)"
               radius={[4, 4, 0, 0]}
             />
           </BarChart>
@@ -74,18 +74,18 @@ export function ChartCard({
           <AreaChart {...commonProps}>
             <defs>
               <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="hsl(var(--chart-primary))" stopOpacity={0.3}/>
-                <stop offset="95%" stopColor="hsl(var(--chart-primary))" stopOpacity={0}/>
+                <stop offset="5%" stopColor="oklch(0.646 0.222 41.116)" stopOpacity={0.3}/>
+                <stop offset="95%" stopColor="oklch(0.4 0.562 48.3)" stopOpacity={0}/>
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
             <XAxis 
               dataKey={xAxisKey} 
-              stroke="hsl(var(--muted-foreground))"
+              stroke="hsl(215 20% 65%)"
               fontSize={12}
             />
             <YAxis 
-              stroke="hsl(var(--muted-foreground))"
+              stroke="hsl(215 20% 65%)"
               fontSize={12}
             />
             <Area 

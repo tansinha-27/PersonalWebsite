@@ -4,7 +4,7 @@
 import { useState} from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Download, X } from "lucide-react";
-// import '../app/globals.css';
+import '../app/globals.css';
 
 
 
@@ -340,9 +340,9 @@ export default function Home() {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group p-3 sm:p-4 rounded-full bg-white/80 backdrop-blur-sm shadow-lg hover:bg-white transform transition-all duration-500 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+      className="group p-3 sm:p-4 transform transition-all duration-500 hover:scale-110 focus:outline-none focus:ring-2"
     >
-      <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex items-center justify-center">
+      <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 flex items-center justify-center">
         {icon}
       </div>
     </a>

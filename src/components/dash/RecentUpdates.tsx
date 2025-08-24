@@ -33,8 +33,8 @@ export function RecentUpdates({ title, updates }: RecentUpdatesProps) {
   };
 
   return (
-    <Card className="p-6 bg-dashboard-surface border-dashboard-border">
-      <h3 className="text-lg font-semibold text-foreground mb-6">{title}</h3>
+    <Card className="p-6 bg-black border-dashboard-border">
+      <h3 className="text-lg text-left font-semibold text-foreground mb-6">{title}</h3>
       
       <div className="space-y-4">
         {updates.map((update, index) => (
@@ -45,8 +45,8 @@ export function RecentUpdates({ title, updates }: RecentUpdatesProps) {
                 <span className="text-xs text-muted-foreground">{update.date}</span>
               </div>
             </div>
-            <h4 className="text-sm font-medium text-foreground mb-1">{update.title}</h4>
-            <p className="text-xs text-muted-foreground leading-relaxed mb-2">{update.description}</p>
+            <h4 className="text-sm font-medium text-foreground mb-1 text-left">{update.title}</h4>
+            <p className="text-xs text-muted-foreground leading-relaxed mb-2 text-left">{update.description}</p>
             {(update.projectLink || update.blogLink) && (
               <div className="flex items-center gap-3">
                 {update.projectLink && (
@@ -54,7 +54,7 @@ export function RecentUpdates({ title, updates }: RecentUpdatesProps) {
                     href={update.projectLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors"
+                    className="inline-flex items-center gap-1 text-xs text-cyan-300 hover:text-primary/80 transition-colors"
                   >
                     <Github className="h-3 w-3" />
                     Project
@@ -65,7 +65,7 @@ export function RecentUpdates({ title, updates }: RecentUpdatesProps) {
                     href={update.blogLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors"
+                    className="inline-flex items-center gap-1 text-xs text-cyan-300 hover:text-primary/80 transition-colors"
                   >
                     <ExternalLink className="h-3 w-3" />
                     Blog Post
