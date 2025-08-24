@@ -3,7 +3,7 @@ import { ChartCard } from "@/components/dash/ChartCard";
 import { FeatureComparison } from "@/components/dash/FeatureComparison";
 import { TechStack } from "@/components/dash/TechStack";
 import { RecentUpdates } from "@/components/dash/RecentUpdates";
-import { Activity, Users, TrendingUp, Code2, Zap, Database } from "lucide-react";
+import { Activity, Users, TrendingUp, Database } from "lucide-react";
 import '../app/globals.css'
 
 const Dashboard = () => {
@@ -28,15 +28,15 @@ const Dashboard = () => {
     { month: 'Jul', users: 225 },
   ];
 
-  const revenueData = [
-    { month: 'Jan', revenue: 15000 },
-    { month: 'Feb', revenue: 18000 },
-    { month: 'Mar', revenue: 16500 },
-    { month: 'Apr', revenue: 22000 },
-    { month: 'May', revenue: 19800 },
-    { month: 'Jun', revenue: 25000 },
-    { month: 'Jul', revenue: 28500 },
-  ];
+  // const revenueData = [
+  //   { month: 'Jan', revenue: 15000 },
+  //   { month: 'Feb', revenue: 18000 },
+  //   { month: 'Mar', revenue: 16500 },
+  //   { month: 'Apr', revenue: 22000 },
+  //   { month: 'May', revenue: 19800 },
+  //   { month: 'Jun', revenue: 25000 },
+  //   { month: 'Jul', revenue: 28500 },
+  // ];
 
   const techStackItems = [
     { name: 'React', category: 'Frontend' },

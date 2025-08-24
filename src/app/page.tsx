@@ -3,8 +3,9 @@
 
 import { useState} from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Download, X } from "lucide-react";
+import { Download } from "lucide-react";
 import '../app/globals.css';
+
 
 
 
@@ -40,11 +41,11 @@ import { Raleway } from 'next/font/google';
 //   variable: '--font-frank',
 // });
 
-const raleway = Raleway({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-raleway',
-});
+// const raleway = Raleway({
+//   subsets: ['latin'],
+//   weight: ['300', '400', '500', '600', '700'],
+//   variable: '--font-raleway',
+// });
 
 // const inter = Inter({
 //   subsets: ['latin'],

@@ -1,7 +1,6 @@
 
 // import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import { X } from 'lucide-react';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { OriginStorySection } from '@/components/sections/OriginStorySection';
 import { FormativeYearsSection } from '@/components/sections/FormativeYearsSection';
