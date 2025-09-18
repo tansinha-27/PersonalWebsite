@@ -68,18 +68,14 @@ export const OriginStorySection = () => {
           </motion.div>
           
           <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-8">
-            Origin Story
+            the prototype phase.
           </h2>
           <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
             <p>
-              It started with a broken computer and an insatiable curiosity. While other kids played outside, 
-              I was dismantling electronics, fascinated by the intricate dance of circuits and code that 
-              brought machines to life.
+            This phase was my early build — where inclinations took shape and values found their roots. I grew up in Delhi, surrounded by family, warmth, and the everyday cacophony that became my backdrop. In search of a fit,  I cycled through a plenty of classes — Kathak, skating, swimming, art, Kumon, tennis, western dance — (mostly unwillingly.) I was an introverted extrovert: choosing the library over games during substitution, yet cherishing time with friends greatly. 
             </p>
             <p>
-              That pivotal moment came at age 12 when I successfully fixed our family computer—not just 
-              hardware, but diving deep into the software that made it tick. The rush of problem-solving, 
-              the satisfaction of creation, the endless possibilities ahead. That&apos;s when I knew.
+            Confidence didn’t come easy; I iterated through versions of myself — the shy kid, the angsty teen, the star student, the self-conscious adolescent. Over time, I became functional in the ways that mattered. This prototype phase was where my core values solidified and maybe laid groundwork for my future desires.
             </p>
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}

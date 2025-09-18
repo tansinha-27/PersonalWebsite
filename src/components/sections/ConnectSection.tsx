@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Coffee, Code, Rocket } from 'lucide-react';
+import { Wand, BrainCog, Rocket } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
 export const ConnectSection = () => {
   const [selectedPoll, setSelectedPoll] = useState<string | null>(null);
 
   const pollOptions = [
-    { id: 'tech', label: 'Latest tech adventures', icon: Code },
-    { id: 'coffee', label: 'Coffee & creative processes', icon: Coffee },
-    { id: 'future', label: 'Future project ideas', icon: Rocket },
+    { id: 'tech', label: 'Was Harry really the hero, or just a plot device while Hermione did all the work?', icon: Wand },
+    { id: 'coffee', label: 'Should AI become more human or should humans act less robotic?', icon: BrainCog},
+    { id: 'future', label: 'What’s one conspiracy theory which blew your mind?', icon: Rocket },
   ];
 
   return (
@@ -28,13 +28,9 @@ export const ConnectSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-8">
-            Let&apos;s Connect
-          </h2>
+reach out.        </h2>
           <p className="text-xl text-slate-700 mb-12 leading-relaxed max-w-2xl mx-auto">
-            Beyond the code, I&apos;m passionate about specialty coffee, sustainable technology, 
-            and the intersection of design and engineering. Always excited to collaborate on 
-            projects that push boundaries.
-          </p>
+          I would love to know more into topics like business, psychology,consumer tech, fitness, or anything we might have in common. Always up for meeting new people — whether it’s to swap ideas, brainstorm, or just vent.          </p>
 
           {/* Poll Section */}
           <motion.div

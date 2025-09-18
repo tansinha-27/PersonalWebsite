@@ -12,7 +12,7 @@ const sections = [
   { id: 'hero', component: HeroSection, title: 'Start' },
   { id: 'origin', component: OriginStorySection, title: 'Origin' },
   { id: 'formative', component: FormativeYearsSection, title: 'Learning' },
-  { id: 'golden', component: GoldenPhaseSection, title: 'Growth' },
+  // { id: 'golden', component: GoldenPhaseSection, title: 'Growth' },
   { id: 'now', component: MeNowSection, title: 'Present' },
   { id: 'connect', component: ConnectSection, title: 'Connect' },
 ];

@@ -37,6 +37,8 @@ export function ChartCard({
             <YAxis 
               stroke="hsl(215 20% 65%)"
               fontSize={12}
+              allowDecimals={false}
+              domain={[0, 6]} 
             />
             <Line 
               type="monotone" 
@@ -83,10 +85,12 @@ export function ChartCard({
               dataKey={xAxisKey} 
               stroke="hsl(215 20% 65%)"
               fontSize={12}
+              ticks={['Jan', 'Mar', 'May', 'Jul', 'Sep', 'Nov']} 
             />
             <YAxis 
               stroke="hsl(215 20% 65%)"
               fontSize={12}
+              domain={[0, 100]} 
             />
             <Area 
               type="monotone" 

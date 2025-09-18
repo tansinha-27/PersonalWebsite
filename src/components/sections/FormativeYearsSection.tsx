@@ -184,23 +184,18 @@ export const FormativeYearsSection = () => {
           </motion.div>
           
           <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-8">
-            Formative Years
-          </h2>
+the launch phase.          </h2>
           <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
             <p>
-              University wasn&apos;t just about algorithms and data structures—it was about learning to think 
-              systematically, to break down impossible problems into manageable pieces. My first real 
-              build was embarrassingly basic, but it worked.
+            This was the moment I shipped myself into the real world. Education turned into career choices, ideas became execution, and uncertainty met reality. College was my production environment — part testing ground, part playground. I leaned into opportunities-leading clubs, brainstorming startup ideas, testing paths like DSA and research (and quickly realizing they weren’t my cup of tea). I built memories to last a lifetime, and lived through every high and low: I laughed, I cried, I thrived. 
             </p>
+            {/* <p> I particapted in various clubs, tried my hand to hardcore DSA, explore technical writing, ideated on building a content platform, </p> */}
             <p>
-              Late nights in computer labs, debugging sessions that lasted until dawn, and that first 
-              successful deployment. Each project taught me something new: the importance of clean code, 
-              user experience, and the delicate balance between perfection and shipping.
+            The most valuable discovery from this phase was my inclination toward leadership and how much I enjoy building a brand. Safe to say, will always remain some of the best years of my entire lifecycle.
             </p>
-            <p>
-              The learning curve was steep, but every challenge overcome became a foundation stone 
-              for what came next.
-            </p>
+            {/* <p>
+              
+            </p> */}
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}

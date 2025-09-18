@@ -153,24 +153,21 @@ export const MeNowSection = () => {
             </svg>
           </motion.div>
           <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-8">
-            Me Now
+            the scaling phase.
           </h2>
           <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
             <p>
-              Today, I bring a rare combination: deep technical expertise paired with genuine business 
-              understanding. I write code that scales, lead teams that deliver, and approach every 
-              challenge with both analytical rigor and creative thinking.
+            Today, I bring a combination of technical depth paired with genuine business curiosity. I love solving problems where both worlds meet — approaching every challenge with analytical rigor and creative imagination.
+My core values haven’t changed since those early prototypes: build things that matter, write code with purpose, and always be learning.
             </p>
             <p>
-              My core values haven&apos;t changed since those early days of curiosity: build things that matter, 
-              write code that lasts, and always be learning. Currently focused on modern web architectures, 
-              AI integration, and creating developer experiences that spark joy.
+            Right now, I’m focused on modern web architectures, AI integration, and designing experiences that spark joy and personalization.What I bring to the table: reliability, scalability, and creativity — traits that evolve with every version.
             </p>
-            <p>
+            {/* <p>
               What I bring to the table: a systems thinker who can zoom out to strategy and zoom in to 
               implementation details, a technical leader who codes alongside the team, and someone who 
               believes the best technology serves humanity, not the other way around.
-            </p>
+            </p> */}
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}

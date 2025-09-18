@@ -14,7 +14,7 @@ interface MetricCardProps {
 
 export function MetricCard({ title, value, subtitle, icon: Icon, trend }: MetricCardProps) {
   return (
-    <Card className="p-6 bg-black-400 border-3 hover:border-cyan-600 transition-colors">
+    <Card className="p-6 bg-black-400 border-3 hover:transition-all duration-300 hover:scale-105 hover:shadow-md hover:shadow-gray-500/50">
       <div className="flex items-start justify-between">
         <div className="space-y-2">
           <p className="text-sm font-medium text-muted-foreground text-left">{title}</p>

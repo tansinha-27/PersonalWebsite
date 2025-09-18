@@ -3,7 +3,7 @@
 
 import { useState} from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Download } from "lucide-react";
+import { Download, X} from "lucide-react";
 import '../app/globals.css';
 
 
@@ -24,7 +24,7 @@ import Dashboard from "@/components/Dashboard";
 // import { EB_Garamond } from 'next/font/google';
 // import { Typewriter } from "react-simple-typewriter";
 // import { Frank_Ruhl_Libre } from 'next/font/google';
-import { Raleway } from 'next/font/google';
+import { Montserrat} from 'next/font/google';
 // import { Inter } from 'next/font/google';
 // import { Bebas_Neue } from 'next/font/google';
 
@@ -70,6 +70,13 @@ import { Raleway } from 'next/font/google';
 //     },
 //   }),
 // };
+
+const montserrat = Montserrat({
+  weight: ['300'], // Specify desired weights
+  subsets: ['latin'],
+  display: 'swap', // Optimizes font loading
+  
+});
 
 export default function Home() {
   const [activePanel, setActivePanel] = useState<"first" | "last" | null>(null);
@@ -215,7 +222,7 @@ export default function Home() {
           whileHover={{ x: -30 }} // shift left on hover (desktop)
   // animate={isHovered && isTouchDevice ? { x: -30 } : { x: 0 }} // shift left on tap (mobile)
   // transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-          className="cursor-pointer text-cyan-700 hover:text-cyan-500 transition font-[Orpheus_Pro] -translate-x-2 sm:-translate-x-12 tracking-wide group"
+          className="cursor-pointer text-cyan-700 hover:text-cyan-500 transition font-normal tracking-widest -translate-x-2 sm:-translate-x-12 tracking-wide group"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
@@ -225,7 +232,7 @@ export default function Home() {
         >
           Tanishaa
           <sup className="text-xs sm:text-base align-top text-gray-500 transition-all duration-200 group-hover:text-sm group-hover:sm:text-lg">
-          {hoveredPanel === "first" ? "[curious human]" : "[personal]"} </sup>
+          {hoveredPanel === "first" ? "[who I am]" : "[personal]"} </sup>
           </motion.div>
 
         <motion.div
@@ -245,7 +252,7 @@ export default function Home() {
           onMouseLeave={() => setHoveredPanel(null)}
           onClick={() => handleClick("last")}
           whileHover={{ x: 30 }} // shift left on hover (desktop)
-          className="cursor-pointer text-gray-900 hover:text-gray-700 transition font-[Twentieth_Century] translate-x-12 sm:translate-x-23 group"
+          className="cursor-pointer text-gray-900 hover:text-gray-700 transition font-normal tracking-widest translate-x-12 sm:translate-x-23 group"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1.4, duration: 0.8 }}
@@ -254,7 +261,7 @@ export default function Home() {
           onKeyDown={(e) => e.key === "Enter" && handleClick("last")}
         >
           Sinha
-          <sup className="text-xs sm:text-base align-top text-gray-500 transition-all duration-200 group-hover:text-sm group-hover:sm:text-lg">{hoveredPanel==="last" ? "[bring ideas to life]" : "[professional]"}</sup>
+          <sup className="text-xs sm:text-base align-top text-gray-500 transition-all duration-200 group-hover:text-sm group-hover:sm:text-lg">{hoveredPanel==="last" ? "[what I bring so far]" : "[professional]"}</sup>
 
         </motion.div>
 
@@ -343,7 +350,7 @@ export default function Home() {
       rel="noopener noreferrer"
       className="group p-3 sm:p-4 transform transition-all duration-500 hover:scale-110 focus:outline-none focus:ring-2"
     >
-      <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 flex items-center justify-center">
+      <div className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 flex items-center justify-center">
         {icon}
       </div>
     </a>
@@ -377,7 +384,7 @@ export default function Home() {
                   focus:outline-none
                   active:scale-95"
               >
-                Close
+                <X size={16} />
               </button>
             </div>
             
@@ -451,7 +458,7 @@ export default function Home() {
                   active:scale-95"
                   
               >
-                Close
+                <X size={16}/>
               </button>
             </div>
 
@@ -524,9 +531,7 @@ export default function Home() {
                 <div className="absolute top-4 right-4">
               <button
                 onClick={() => setActivePanel(null)}
-                className="text-white text-base px-5 py-1.5 rounded-full
-                  bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900
-                  border border-gray-700/50
+                className="text-gray-400 text-base px-5
                   shadow-[2px_2px_6px_0_rgba(0,0,0,0.2),-2px_-2px_6px_0_rgba(255,255,255,0.05)]
                   hover:shadow-[inset_2px_2px_6px_0_rgba(0,0,0,0.2),inset_-2px_-2px_6px_0_rgba(255,255,255,0.05)]
                   transition-all duration-200 ease-in-out
@@ -535,7 +540,7 @@ export default function Home() {
                   focus:outline-none
                   active:scale-95"
               >
-                Close
+                <X size={30} />
               </button>
             </div>
               {/* <h1 className="text-6xl font-semibold mb-6">Tanishaa <span className="text-cyan-400 font-semibold">OS</span></h1>
