@@ -1,12 +1,11 @@
 import { motion} from 'framer-motion';
 import { ChevronDown, Code , MicVocal ,MapPinCheckIcon, Library ,PenLine, Users , Circle } from 'lucide-react';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 
 
 export const HeroSection = ({ onClose }: { onClose?: () => void }) => {
   // const [titleNumber, setTitleNumber] = useState(0);
-  const titles = ['story', 'designer', 'creator'];
 
   // useEffect(() => {
   //   const timer = setInterval(() => {

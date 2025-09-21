@@ -22,7 +22,7 @@ import Dashboard from "@/components/Dashboard";
 // import { EB_Garamond } from 'next/font/google';
 // import { Typewriter } from "react-simple-typewriter";
 // import { Frank_Ruhl_Libre } from 'next/font/google';
-import { Montserrat} from 'next/font/google';
+// import { Montserrat} from 'next/font/google';
 // import { Inter } from 'next/font/google';
 // import { Bebas_Neue } from 'next/font/google';
 

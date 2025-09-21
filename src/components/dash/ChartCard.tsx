@@ -3,6 +3,7 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Line
 
 interface ChartCardProps<T= any> {
   title: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: T[];
   type?: 'area' | 'line' | 'bar';
   dataKey: string;
