@@ -1,10 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, LineChart, Line, BarChart, Bar } from "recharts";
 
-interface ChartCardProps<T= any> {
+interface ChartCardProps{
   title: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  data: T[];
+  data: any[];
   type?: 'area' | 'line' | 'bar';
   dataKey: string;
   xAxisKey: string;
