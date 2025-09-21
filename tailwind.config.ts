@@ -97,7 +97,7 @@ const config: Config = {
   },
 
   plugins: [require("tailwindcss-animate")],
-  safelist: ["text-muted-foreground"],
+//   safelist: ["text-muted-foreground"],
 
 };
 
