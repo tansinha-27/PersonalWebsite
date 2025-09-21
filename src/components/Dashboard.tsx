@@ -94,37 +94,152 @@ const Dashboard = () => {
   ];
 
   const featureComparisonData = [
-    { name: 'Real-time Analytics', current: 'full' as const, competitor: 'partial' as const },
-    { name: 'Custom Dashboards', current: 'full' as const, competitor: 'none' as const },
-    { name: 'API Integration', current: 'full' as const, competitor: 'full' as const },
-    { name: 'Advanced Reporting', current: 'partial' as const, competitor: 'none' as const },
-    { name: 'Team Collaboration', current: 'full' as const, competitor: 'partial' as const },
+    { name: '10/10 Communicator', current: 'full' as const, competitor: 'partial' as const },
+    { name: 'On-The-Go Generalist', current: 'full' as const, competitor: 'partial' as const },
+    { name: 'Technical Depth + Non-Technical Acumen', current: 'full' as const, competitor: 'full' as const },
+    { name: 'Empathy Engine', current: 'full' as const, competitor: 'partial' as const },
+    { name: 'StoryTelling Framework', current: 'full' as const, competitor: 'full' as const },
   ];
 
   const recentUpdates = [
     {
       type: 'improvement' as const,
-      title: 'Enhanced Performance Metrics',
-      description: 'Improved dashboard loading times by 40% and added real-time data streaming.',
+      title: 'Daily UPI Transaction Automation Script',
+      description: 'Removed the hassle of manual monthly budgeting by automatically logging monthly transactions in Excel',
       date: '2 days ago',
-      projectLink: 'https://github.com/username/performance-optimization',
-      blogLink: 'https://blog.example.com/performance-improvements'
+      projectLink: 'https://www.notion.so/Daily-Budget-Automation-2756b95527bf80249433f76a338a0fe6?source=copy_link',
+      // blogLink: 'https://blog.example.com/performance-improvements'
     },
+    // {
+    //   type: 'feature' as const,
+    //   title: 'New Analytics Dashboard',
+    //   description: 'Launched comprehensive analytics with custom visualization options.',
+    //   date: '1 week ago',
+    //   projectLink: 'https://github.com/username/analytics-dashboard'
+    // },
     {
-      type: 'feature' as const,
-      title: 'New Analytics Dashboard',
-      description: 'Launched comprehensive analytics with custom visualization options.',
+      type: 'bug' as const,
+      title: 'NFT Marketplace development',
+      description: 'Dives into NFT Marketplace app essentials',
       date: '1 week ago',
-      projectLink: 'https://github.com/username/analytics-dashboard'
+      blogLink: 'https://markovate.com/blog/nft-marketplace-development-guide/'
     },
     {
       type: 'bug' as const,
-      title: 'Fixed Data Synchronization',
-      description: 'Resolved issues with data sync delays affecting real-time updates.',
+      title: 'DevOps for Mobile App Development',
+      description: 'Delves into CI/CD and mobile DevOps challenges',
       date: '1 week ago',
-      projectLink: 'https://github.com/username/data-sync-fix',
+      // projectLink: 'https://github.com/username/data-sync-fix',
+      blogLink: 'https://markovate.com/blog/devops-for-mobile-app-development/'
+    },
+    {
+      type: 'bug' as const,
+      title: 'Google Cloud HealthCare API',
+      description: 'Wrote about the many uses of Google Cloud HealthCare API in the given industry',
+      date: '1 week ago',
+      // projectLink: 'https://github.com/username/data-sync-fix',
+      blogLink: 'https://markovate.com/blog/google-cloud-healthcare-api-use-cases/'
+    },
+    {
+      type: 'bug' as const,
+      title: 'Fitness App Development',
+      description: 'Wrote about features in an ideal fitness app',
+      date: '1 week ago',
+      // projectLink: 'https://github.com/username/data-sync-fix',
+      blogLink: 'https://markovate.com/blog/fitness-app-development-like-fitbit/'
+    },
+    {
+      type: 'bug' as const,
+      title: 'MVP for Product Development',
+      description: 'MVP for Products - What? Why? When?',
+      date: '1 week ago',
+      // projectLink: 'https://github.com/username/data-sync-fix',
+      blogLink: 'https://markovate.com/blog/mvp-examples/'
+    },
+    {
+      type: 'bug' as const,
+      title: 'Microservices Architecture in SaaS',
+      description: 'Guide to understand the benefits of microservices architecture as well as the requirements to keep in mind',
+      date: '1 week ago',
+      // projectLink: 'https://github.com/username/data-sync-fix',
+      blogLink: 'https://markovate.com/blog/saas-product-development-microservices-architecture/'
+    },
+    
+    {
+      type: 'bug' as const,
+      title: 'Travel Mobile App Development',
+      description: 'All about categories/features/succes stories of travel apps',
+      date: '1 week ago',
+      // projectLink: 'https://github.com/username/data-sync-fix',
+      blogLink: 'https://markovate.com/blog/travel-mobile-app-for-tourism-industry/'
+    },
+    {
+      type: 'bug' as const,
+      title: 'iOS SSL Pinning',
+      description: 'All about security using SSL certificates for iOS apps',
+      date: '1 week ago',
+      // projectLink: 'https://github.com/username/data-sync-fix',
+      blogLink: 'https://markovate.com/blog/ios-ssl-pinning/'
+    },
+    {
+      type: 'bug' as const,
+      title: 'Xamarin for Enterprise App Development',
+      description: 'Elaborates on the pros and cons of Xamarin for app development',
+      date: '1 week ago',
+      // projectLink: 'https://github.com/username/data-sync-fix',
+      blogLink: 'https://markovate.com/blog/xamarin-enterprise-app-development/'
+    },
+  
+    
+    {
+      type: 'bug' as const,
+      title: 'Web3 Vs Metaverse',
+      description: 'Elaborates on differences/similarities as well as future scope ',
+      date: '1 week ago',
+      // projectLink: 'https://github.com/username/data-sync-fix',
       blogLink: 'https://blog.example.com/fixing-data-sync'
     },
+   
+    {
+      type: 'bug' as const,
+      title: 'MongoDB vs MySQL',
+      description: 'Helps to give an insight which database could be better for your business use case',
+      date: '1 week ago',
+      // projectLink: 'https://github.com/username/data-sync-fix',
+      blogLink: 'https://markovate.com/blog/mongodb-vs-mysql-database/'
+    },
+    {
+      type: 'bug' as const,
+      title: 'Serverless Architecture for Scalability',
+      description: 'Delves into using serverless computing architecture to build scalable applications',
+      date: '1 week ago',
+      // projectLink: 'https://github.com/username/data-sync-fix',
+      blogLink: 'https://markovate.com/blog/serverless-application-architecture/'
+    },
+    {
+      type: 'bug' as const,
+      title: 'Does Color Matter In Making Your Voice Heard?',
+      description: 'Wrote a piece on racial bias and white elitism',
+      date: '1 week ago',
+      // projectLink: 'https://github.com/username/data-sync-fix',
+      blogLink: 'https://www.hercampus.com/school/muj/does-color-matter-in-making-your-voice-heard/'
+    },
+    {
+      type: 'bug' as const,
+      title: 'Construction Of Sexism: Women In Architecture',
+      description: 'A take on the career growth of women in the field of architecture',
+      date: '1 week ago',
+      // projectLink: 'https://github.com/username/data-sync-fix',
+      blogLink: 'https://www.hercampus.com/school/muj/construction-of-sexism-women-in-architecture/'
+    },
+    // {
+    //   type: 'bug' as const,
+    //   title: 'Fixed Data Synchronization',
+    //   description: 'Resolved issues with data sync delays affecting real-time updates.',
+    //   date: '1 week ago',
+    //   projectLink: 'https://github.com/username/data-sync-fix',
+    //   blogLink: 'https://blog.example.com/fixing-data-sync'
+    // },
   ];
 
   return (

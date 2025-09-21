@@ -1,9 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, LineChart, Line, BarChart, Bar } from "recharts";
 
-interface ChartCardProps {
+interface ChartCardProps<T= any> {
   title: string;
-  data: any[];
+  data: T[];
   type?: 'area' | 'line' | 'bar';
   dataKey: string;
   xAxisKey: string;

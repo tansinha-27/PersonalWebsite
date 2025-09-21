@@ -7,8 +7,6 @@ import { Download, X} from "lucide-react";
 import '../app/globals.css';
 
 
-
-
 import {
   FaEnvelope,
   FaLinkedin,
@@ -71,12 +69,12 @@ import { Montserrat} from 'next/font/google';
 //   }),
 // };
 
-const montserrat = Montserrat({
-  weight: ['300'], // Specify desired weights
-  subsets: ['latin'],
-  display: 'swap', // Optimizes font loading
+// const montserrat = Montserrat({
+//   weight: ['300'], // Specify desired weights
+//   subsets: ['latin'],
+//   display: 'swap', // Optimizes font loading
   
-});
+// });
 
 export default function Home() {
   const [activePanel, setActivePanel] = useState<"first" | "last" | null>(null);
@@ -373,9 +371,8 @@ export default function Home() {
             <div className="absolute top-4 right-4">
               <button
                 onClick={() => setActivePanel(null)}
-                className="text-white text-base px-5 py-1.5 rounded-full
+                className="text-white text-base px-5 py-1.5 
                   bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900
-                  border border-gray-700/50
                   shadow-[2px_2px_6px_0_rgba(0,0,0,0.2),-2px_-2px_6px_0_rgba(255,255,255,0.05)]
                   hover:shadow-[inset_2px_2px_6px_0_rgba(0,0,0,0.2),inset_-2px_-2px_6px_0_rgba(255,255,255,0.05)]
                   transition-all duration-200 ease-in-out
@@ -446,9 +443,9 @@ export default function Home() {
             <div className="absolute top-4 right-4">
               <button
                 onClick={() => setActivePanel(null)}
-                className="text-white text-base px-5 py-1.5 rounded-full
+                className="text-white text-base px-5 py-1.5 
                   bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900
-                  border border-gray-700/50
+        
                   shadow-[2px_2px_6px_0_rgba(0,0,0,0.2),-2px_-2px_6px_0_rgba(255,255,255,0.05)]
                   hover:shadow-[inset_2px_2px_6px_0_rgba(0,0,0,0.2),inset_-2px_-2px_6px_0_rgba(255,255,255,0.05)]
                   transition-all duration-200 ease-in-out
@@ -527,22 +524,27 @@ export default function Home() {
 
 
             {activePanel === "last" && (
-              <div className="fixed inset-0 overflow-y-auto scroll-smooth z-50">
-                <div className="absolute top-4 right-4">
-              <button
-                onClick={() => setActivePanel(null)}
-                className="text-gray-400 text-base px-5
-                  shadow-[2px_2px_6px_0_rgba(0,0,0,0.2),-2px_-2px_6px_0_rgba(255,255,255,0.05)]
-                  hover:shadow-[inset_2px_2px_6px_0_rgba(0,0,0,0.2),inset_-2px_-2px_6px_0_rgba(255,255,255,0.05)]
-                  transition-all duration-200 ease-in-out
-                  hover:scale-[0.98]
-                  hover:border-gray-600/50
-                  focus:outline-none
-                  active:scale-95"
-              >
-                <X size={30} />
-              </button>
-            </div>
+              <div className="fixed inset-0 overflow-y-auto scroll-smooth z-50"
+              style={{ 
+                width: '100vw', 
+                height: '100vh',
+                margin: '0',
+                padding: '0'
+              }}>
+              <div className="absolute top-4 right-4 z-50">
+      <button
+        onClick={() => setActivePanel(null)} // Make sure this function is available in your component
+        className="
+          text-slate-600
+          transition-all duration-200 ease-in-out
+          hover:scale-105
+          active:scale-95
+        "
+        aria-label="Close and return to homepage"
+      >
+        <X size={32} className="w-8 h-8" />
+      </button>
+    </div>
               {/* <h1 className="text-6xl font-semibold mb-6">Tanishaa <span className="text-cyan-400 font-semibold">OS</span></h1>
                 <p className="text-lg mb-8 text-gray-300 max-w-3xl mx-auto">A living, evolving product – continuously improving through feedback, experiments, and real-world testing.</p> */}
 

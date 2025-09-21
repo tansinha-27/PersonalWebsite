@@ -1,28 +1,38 @@
-import { motion, AnimatePresence} from 'framer-motion';
+import { motion} from 'framer-motion';
 import { ChevronDown, Code , MicVocal ,MapPinCheckIcon, Library ,PenLine, Users , Circle } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { X } from 'lucide-react';
 
-export const HeroSection = () => {
-  const [titleNumber, setTitleNumber] = useState(0);
+
+export const HeroSection = ({ onClose }: { onClose?: () => void }) => {
+  // const [titleNumber, setTitleNumber] = useState(0);
   const titles = ['story', 'designer', 'creator'];
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTitleNumber((prev) => (prev + 1) % titles.length);
-    }, 2000);
-    return () => clearInterval(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setTitleNumber((prev) => (prev + 1) % titles.length);
+  //   }, 2000);
+  //   return () => clearInterval(timer);
+  // }, []);
 
   return (
     <motion.section 
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="h-screen w-screen fixed inset-0 flex items-center justify-center relative overflow-hidden z-[60]"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-blue-50"></div>
+      <button
+        onClick={onClose}
+        className="absolute top-6 right-6 text-slate-600  z-50 p-2 bg-white/70 transition-all duration-200 ease-in-out hover:scale-105 active:scale-95 pointer-events-auto"
+        aria-label="Close and return to homepage"
+      >
+        <X size={32} className="w-8 h-8" />
+      </button>
+
+      <div className="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-blue-50 pointer-events-none"></div>
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="text-center z-10 px-8"
+        className="text-center z-10 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto"
       >
         
         <h1 className="text-6xl md:text-7xl text-slate-900 mb-6">
@@ -82,7 +92,7 @@ export const HeroSection = () => {
         </motion.div>
 
         <div className="absolute bottom-14 left-1/2 transform -translate-x-1/2 z-20">
-        <p className="text-slate-600 font-medium text-sm mb-4 text-center">things I like to do</p>
+        <p className="text-slate-600 font-medium text-lg mb-4 text-center">things I like to do</p>
                 {/* App Dock */}
                 <div className="flex items-center gap-18 bg-white/20 backdrop-blur-md border border-white/30 rounded-3xl px-8 py-4 shadow-lg">
           {[
@@ -93,7 +103,7 @@ export const HeroSection = () => {
             { icon: PenLine, name: 'Safari', color: 'bg-blue-400', hoverText: 'pen down articles & blogs' },
             { icon: Circle, name: 'Terminal', color: 'bg-gray-800', hoverText: 'play table tennis' },
             { icon: Users, name: 'iPhone', color: 'bg-gray-600', hoverText: 'analyze people patterns' }
-          ].map((app, index) => (
+          ].map((app) => (
             <motion.div
               key={app.name}
               className="group relative"
