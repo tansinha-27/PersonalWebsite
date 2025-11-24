@@ -5,37 +5,18 @@ import { TechStack } from "@/components/dash/TechStack";
 import { RecentUpdates } from "@/components/dash/RecentUpdates";
 import { Activity, Users, TrendingUp, Database } from "lucide-react";
 import '../app/globals.css'
-import { Montserrat} from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 
 const montserrat = Montserrat({
   weight: ['300'], // Specify desired weights
   subsets: ['latin'],
   display: 'swap', // Optimizes font loading
-  
+
 });
 
 
 const Dashboard = () => {
-  // Sample data for charts
-  // const performanceData = [
-  //   { month: 'Jan', value: 45 },
-  //   { month: 'Feb', value: 52 },
-  //   { month: 'Mar', value: 48 },
-  //   { month: 'Apr', value: 61 },
-  //   { month: 'May', value: 55 },
-  //   { month: 'Jun', value: 67 },
-  //   { month: 'Jul', value: 73 },
-  // ];
 
-  // const userGrowthData = [
-  //   { month: 'Jan', users: 120 },
-  //   { month: 'Feb', users: 145 },
-  //   { month: 'Mar', users: 135 },
-  //   { month: 'Apr', users: 180 },
-  //   { month: 'May', users: 165 },
-  //   { month: 'Jun', users: 200 },
-  //   { month: 'Jul', users: 225 },
-  // ];
 
   const performanceData = [
     { month: 'Jan', value: 45 },  // baseline
@@ -58,15 +39,7 @@ const Dashboard = () => {
     { quarter: 'Q4', projects: 1 },
   ];
 
-  // const revenueData = [
-  //   { month: 'Jan', revenue: 15000 },
-  //   { month: 'Feb', revenue: 18000 },
-  //   { month: 'Mar', revenue: 16500 },
-  //   { month: 'Apr', revenue: 22000 },
-  //   { month: 'May', revenue: 19800 },
-  //   { month: 'Jun', revenue: 25000 },
-  //   { month: 'Jul', revenue: 28500 },
-  // ];
+
 
   const techStackItems = [
     { name: 'Python', category: 'Programming Languages' },
@@ -164,7 +137,7 @@ const Dashboard = () => {
       // projectLink: 'https://github.com/username/data-sync-fix',
       blogLink: 'https://markovate.com/blog/saas-product-development-microservices-architecture/'
     },
-    
+
     {
       type: 'bug' as const,
       title: 'Travel Mobile App Development',
@@ -189,8 +162,8 @@ const Dashboard = () => {
       // projectLink: 'https://github.com/username/data-sync-fix',
       blogLink: 'https://markovate.com/blog/xamarin-enterprise-app-development/'
     },
-  
-    
+
+
     {
       type: 'bug' as const,
       title: 'Web3 Vs Metaverse',
@@ -199,7 +172,7 @@ const Dashboard = () => {
       // projectLink: 'https://github.com/username/data-sync-fix',
       blogLink: 'https://blog.example.com/fixing-data-sync'
     },
-   
+
     {
       type: 'bug' as const,
       title: 'MongoDB vs MySQL',
@@ -243,101 +216,101 @@ const Dashboard = () => {
   ];
 
   return (
-<div className={`dark ${montserrat.className}`}>
-    <div className="min-h-screen bg-background">
-      <div className="w-full space-y-8 p-6">
-        {/* Header */}
-        <div className="text-center space-y-4">
-        {/* <div className="space-y-4 p-4"> */}
-  {/* <div className="bg-success text-success-foreground p-4 rounded">Success!</div>
+    <div className={`dark ${montserrat.className}`}>
+      <div className="min-h-screen bg-background">
+        <div className="w-full space-y-8 p-6">
+          {/* Header */}
+          <div className="text-center space-y-4">
+            {/* <div className="space-y-4 p-4"> */}
+            {/* <div className="bg-success text-success-foreground p-4 rounded">Success!</div>
   <div className="bg-primary text-primary-foreground p-4 rounded">Primary Color</div>
 </div> */}
-          <h1 className="text-4xl font-bold text-foreground">
-            track wins. <span className="text-cyan-300">measure progress. </span><span className="text-cyan-400">showcase value.</span>
-          </h1>
+            <h1 className="text-4xl font-bold text-foreground">
+              track wins. <span className="text-cyan-300">measure progress. </span><span className="text-cyan-400">showcase value.</span>
+            </h1>
 
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            PS: metrics might or might not be totally biased
-          </p>
-        </div>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              PS: metrics might or might not be totally biased
+            </p>
+          </div>
 
-        {/* KPI Metrics */}
-        <div>
-          {/* <h2 className="text-xl font-semibold text-cyan-300 mb-4">KPI Dashboard</h2> */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <MetricCard
-              title="Skill Proficiency Index"
-              value="74%"
-              subtitle="Tech/Non-Tech"
-              icon={Users}
-              trend={{ value: 12.5, isPositive: true }}
+          {/* KPI Metrics */}
+          <div>
+            {/* <h2 className="text-xl font-semibold text-cyan-300 mb-4">KPI Dashboard</h2> */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <MetricCard
+                title="Skill Proficiency Index"
+                value="74%"
+                subtitle="Tech/Non-Tech"
+                icon={Users}
+                trend={{ value: 12.5, isPositive: true }}
+              />
+              <MetricCard
+                title="Impact Score"
+                value="56"
+                subtitle="Projects & Blogs delivered"
+                icon={Activity}
+                trend={{ value: 5.2, isPositive: true }}
+              />
+              <MetricCard
+                title="Recognition Count"
+                value="12"
+                subtitle="Awards/Recognitions earned"
+                icon={TrendingUp}
+                trend={{ value: 8.1, isPositive: true }}
+              />
+              <MetricCard
+                title="Procastination Downtime"
+                value="3 hrs"
+                subtitle="This Month"
+                icon={Database}
+                trend={{ value: 3.2, isPositive: false }}
+              />
+            </div>
+          </div>
+
+          {/* Charts Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <ChartCard
+              title="Skill Acquisition Score"
+              data={performanceData}
+              type="area"
+              dataKey="value"
+              xAxisKey="month"
+              height={300}
             />
-            <MetricCard
-              title="Impact Score"
-              value="56"
-              subtitle="Projects & Blogs delivered"
-              icon={Activity}
-              trend={{ value: 5.2, isPositive: true }}
-            />
-            <MetricCard
-              title="Recognition Count"
-              value="12"
-              subtitle="Awards/Recognitions earned"
-              icon={TrendingUp}
-              trend={{ value: 8.1, isPositive: true }}
-            />
-            <MetricCard
-              title="Procastination Downtime"
-              value="3 hrs"
-              subtitle="This Month"
-              icon={Database}
-              trend={{ value: 3.2, isPositive: false }}
+            <ChartCard
+              title="Projects v/s Quarter"
+              data={projectsPerQuarterData}
+              type="line"
+              dataKey="projects"
+              xAxisKey="quarter"
+              height={300}
             />
           </div>
-        </div>
-
-        {/* Charts Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <ChartCard
-            title="Skill Acquisition Score"
-            data={performanceData}
-            type="area"
-            dataKey="value"
-            xAxisKey="month"
-            height={300}
-          />
-          <ChartCard
-            title="Projects v/s Quarter"
-            data={projectsPerQuarterData}
-            type="line"
-            dataKey="projects"
-            xAxisKey="quarter"
-            height={300}
-          />
-        </div>
 
 
-        {/* Tech Stack and Feature Comparison */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <TechStack
-            title="Technology Stack"
-            items={techStackItems}
-          />
-          <FeatureComparison
-            title="Feature Comparison"
-            features={featureComparisonData}
-            currentLabel="Me"
-            competitorLabel="Benchmark"
+          {/* Tech Stack and Feature Comparison */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <TechStack
+              title="Technology Stack"
+              items={techStackItems}
+            />
+            <FeatureComparison
+              title="Feature Comparison"
+              features={featureComparisonData}
+              currentLabel="Me"
+              competitorLabel="Benchmark"
+            />
+          </div>
+
+          {/* Recent Updates */}
+          <RecentUpdates
+            title="Recent Updates & Improvements"
+            updates={recentUpdates}
           />
         </div>
-
-        {/* Recent Updates */}
-        <RecentUpdates
-          title="Recent Updates & Improvements"
-          updates={recentUpdates}
-        />
       </div>
-    </div>
     </div>
   );
 };

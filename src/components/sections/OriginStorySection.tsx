@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 
 export const OriginStorySection = () => {
   return (
-    <motion.section 
+    <motion.section
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8 }}
-      className="min-h-screen flex items-center py-20 px-8 pr-16"
+      className="min-h-screen flex items-center py-12 px-4 sm:py-20 sm:px-8 sm:pr-16"
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto w-full">
         <motion.div
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -21,13 +21,11 @@ export const OriginStorySection = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mb-12 flex justify-center"
+            className="mb-8 sm:mb-12 flex justify-center"
           >
-            <svg 
-              width="400" 
-              height="120" 
-              viewBox="0 0 400 120" 
-              className="text-cyan-500"
+            <svg
+              viewBox="0 0 400 120"
+              className="text-cyan-500 w-full max-w-[300px] sm:max-w-[400px] h-auto"
             >
               {/* Skyline Buildings */}
               <motion.path
@@ -40,7 +38,7 @@ export const OriginStorySection = () => {
                 initial={{ pathLength: 0 }}
                 whileInView={{ pathLength: 1 }}
                 viewport={{ once: true }}
-                transition={{ 
+                transition={{
                   duration: 3,
                   delay: 0.5,
                   ease: "easeInOut"
@@ -66,23 +64,23 @@ export const OriginStorySection = () => {
               </motion.g>
             </svg>
           </motion.div>
-          
-          <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-8">
+
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-slate-900 mb-6 sm:mb-8">
             the prototype phase.
           </h2>
-          <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
+          <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-slate-700 leading-relaxed text-justify sm:text-left">
             <p>
-            This phase was my early build — where inclinations took shape and values found their roots. I grew up in Delhi, surrounded by family, warmth, and the everyday cacophony that became my backdrop. In search of a fit,  I cycled through a plenty of classes — Kathak, skating, swimming, art, Kumon, tennis, western dance — (mostly unwillingly.) I was an introverted extrovert: choosing the library over games during substitution, yet cherishing time with friends greatly. 
+              This phase was my early build — where inclinations took shape and values found their roots. I grew up in Delhi, surrounded by family, warmth, and the everyday cacophony that became my backdrop. In search of a fit,  I cycled through a plenty of classes — Kathak, skating, swimming, art, Kumon, tennis, western dance — (mostly unwillingly.) I was an introverted extrovert: choosing the library over games during substitution, yet cherishing time with friends greatly.
             </p>
             <p>
-            Confidence didn’t come easy; I iterated through versions of myself — the shy kid, the angsty teen, the star student, the self-conscious adolescent. Over time, I became functional in the ways that mattered. This prototype phase was where my core values solidified and maybe laid groundwork for my future desires.
+              Confidence didn’t come easy; I iterated through versions of myself — the shy kid, the angsty teen, the star student, the self-conscious adolescent. Over time, I became functional in the ways that mattered. This prototype phase was where my core values solidified and maybe laid groundwork for my future desires.
             </p>
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="w-20 h-1 bg-sky-500 rounded mt-8"
+              className="w-16 h-1 sm:w-20 bg-sky-500 rounded mt-6 sm:mt-8"
             ></motion.div>
           </div>
         </motion.div>

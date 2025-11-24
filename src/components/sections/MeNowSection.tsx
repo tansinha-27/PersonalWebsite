@@ -2,32 +2,30 @@ import { motion } from 'framer-motion';
 
 export const MeNowSection = () => {
   return (
-    <motion.section 
+    <motion.section
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8 }}
-      className="min-h-screen flex items-center py-20 px-8 pr-16 bg-slate-50"
+      className="min-h-screen flex items-center py-12 px-4 sm:py-20 sm:px-8 sm:pr-16 bg-slate-50"
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto w-full">
         <motion.div
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-            <motion.div
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mb-12 flex justify-center items-center"
+            className="mb-8 sm:mb-12 flex justify-center items-center"
           >
-            <svg 
-              width="400" 
-              height="120" 
-              viewBox="0 0 400 120" 
-              className="text-cyan-500"
+            <svg
+              viewBox="0 0 400 120"
+              className="text-cyan-500 w-full max-w-[300px] sm:max-w-[400px] h-auto"
             >
               {/* Laptop with lightbulb */}
               <motion.g
@@ -152,16 +150,16 @@ export const MeNowSection = () => {
 
             </svg>
           </motion.div>
-          <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-8">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-slate-900 mb-6 sm:mb-8">
             the scaling phase.
           </h2>
-          <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
+          <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-slate-700 leading-relaxed text-justify sm:text-left">
             <p>
-            Today, I bring a combination of technical depth paired with genuine business curiosity. I love solving problems where both worlds meet — approaching every challenge with analytical rigor and creative imagination.
-My core values haven’t changed since those early prototypes: build things that matter, write code with purpose, and always be learning.
+              Today, I bring a combination of technical depth paired with genuine business curiosity. I love solving problems where both worlds meet — approaching every challenge with analytical rigor and creative imagination.
+              My core values haven’t changed since those early prototypes: build things that matter, write code with purpose, and always be learning.
             </p>
             <p>
-            Right now, I’m focused on modern web architectures, AI integration, and designing experiences that spark joy and personalization.What I bring to the table: reliability, scalability, and creativity — traits that evolve with every version.
+              Right now, I’m focused on modern web architectures, AI integration, and designing experiences that spark joy and personalization.What I bring to the table: reliability, scalability, and creativity — traits that evolve with every version.
             </p>
             {/* <p>
               What I bring to the table: a systems thinker who can zoom out to strategy and zoom in to 
@@ -173,7 +171,7 @@ My core values haven’t changed since those early prototypes: build things that
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="w-20 h-1 bg-sky-500 rounded mt-8"
+              className="w-16 h-1 sm:w-20 bg-sky-500 rounded mt-6 sm:mt-8"
             ></motion.div>
           </div>
         </motion.div>
