@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { ChevronDown, Code, MicVocal, MapPinCheckIcon, Library, PenLine, Users, Circle } from 'lucide-react';
 // import { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
 
 
 export const HeroSection = () => {
